@@ -1,0 +1,18 @@
+{%  extends "layout.html" %}
+{% block title %} Sign-in for Intellect {% endblock %}
+{% block content %}
+        <h1>Log In To Intellect</h1>
+    <h1>This page is a prototype, it tends to change. It will be tested with current database configuration.</h1>
+    <br>
+        <form action="" method="POST">
+
+            <input type="text" placeholder="Enter your username" name="username" value="{{ request.form.username }}">
+            <input type="text" placeholder="Enter your password" name="password" value="{{ request.form.password }}">
+            <input class="btn btn-default" type="submit" value="Login">
+        </form>
+
+    {% if error %}
+        <p class="error">ERROR: {{ error }}</p>
+    {% endif %}
+
+{% endblock %}

@@ -2,7 +2,7 @@
 #
 # Upcoming Project Works:
 # Views
-# Database connection testing
+# Database configuration & connection testing (as announced in the original repo, itucsdb1809)
 # Database methods (INSERT INTO etc.)
 # Signup form (with DB actions)
 # Signin form

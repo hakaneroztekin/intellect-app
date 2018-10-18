@@ -1,20 +1,37 @@
 {#source: https://web.itu.edu.tr/uyar/fad/application-structure.html#base-templates#}
 
 <!DOCTYPE html>
-<head>
+<header class="w3-container w3-border-top w3-border-bottom">
     <meta charset="utf-8">
-    <link rel="stylesheet" href="/static/projectstyle.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1"> {#mobile responsibility#}
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
+
+<style>
+html, body, h1, h2, h3, h4, h5, h6 {
+font-family: 'Lora', serif;
+}
+</style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
     <title>{% block title %}{% endblock %}</title>
-    <a href="/">Homepage</a>
-    <a href="/signin">Sign-in</a>
-    <a href="/signup">Sign-up</a>
-    <a href="/mylists">My Lists</a>
-</head>
+
+    <div class="w3-bar w3-text-yellow w3-large">
+        <a href="/mylists"><button class="w3-bar-item w3-button w3-right"><b>My Lists</b></button></a>
+        <a href="/signup"><button class="w3-bar-item w3-button w3-right"><b>Sign up</b></button></a>
+        <a href="/signin"><button class="w3-bar-item w3-button w3-right"><b>Sign in</b></button></a>
+        <a href="/"><button class="w3-bar-item w3-button w3-left"><b>Intellect</b></button></a>
+    </div>
+</header>
 
 <body>
 {% block content %}{%  endblock %}
-
-<footer>Disclaimer: Intellect is an experimental project for Database Systems Course | Developed by Hakan Eröztekin</footer>
 </body>
 
+<footer class="w3-container w3-border-top w3-bottom">
+        <p>Disclaimer: Intellect is an experimental project for Database Systems Course | Developed by Hakan Eroztekin</p>
+</footer>
 </html>

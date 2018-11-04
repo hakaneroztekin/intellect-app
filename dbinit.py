@@ -4,11 +4,9 @@ import sys
 import psycopg2 as dbapi2
 
 INIT_STATEMENTS = [
-
-#    "CREATE TABLE IF NOT EXISTS DUMMY (NUM INTEGER)",
-#    "INSERT INTO DUMMY VALUES (42)",
-
- #   "CREATE TABLE IF NOT EXISTS USERS (ID INTEGER)"
+    "DROP TABLE USERS", # for testing purposes
+    "DROP TABLE MUSIC",
+    "DROP TABLE MOVIE",
 
     "CREATE TABLE IF NOT EXISTS USERS("
         "ID INTEGER,"
@@ -40,7 +38,13 @@ INIT_STATEMENTS = [
     "GENRE VARCHAR(30),"
     "PRIMARY KEY(ID)"
     ")",
-    # "CREATE TABLE IF NOT EXISTS MUSIC_LIST(ID INTEGER, USER_ID INTEGER, MUSIC_ID INTEGER, PRIMARY KEY(ID))",
+
+    "CREATE TABLE IF NOT EXISTS MUSIC_LIST("
+    "ID INTEGER,"
+    "USER_ID INTEGER,"
+    "MUSIC_ID INTEGER,"
+    "PRIMARY KEY(ID)"
+    ")",
     # "CREATE TABLE IF NOT EXISTS MOVIE_LIST(ID INTEGER, USER_ID INTEGER, MOVIE_ID INTEGER, PRIMARY KEY(ID))"
 
     # user references _list's USER_ID too.
@@ -53,7 +57,7 @@ INIT_STATEMENTS = [
     # "   AGE INTEGER"
     # "   )",
 ]
-# user: id, username, name, surname, password, age, gender and music_list, movie_list as foreign keys.
+
 
 def initialize(url):
     with dbapi2.connect(url) as connection:

@@ -13,6 +13,15 @@ def insert_user(username, name, surname, password, age, gender):
         cursor.close()
         # return id
 
+def insert_music(name, genre, duration_in_seconds, singer, year):
+    query ='INSERT INTO MUSIC (NAME, GENRE, DURATION_IN_SECONDS, SINGER, YEAR) VALUES(%s, %s, %s, %s, %s)'
+    url = get_db_url()
+    with dbapi2.connect(url) as connection:
+        cursor = connection.cursor()
+        cursor.execute(query, (name, genre, duration_in_seconds, singer, year))
+        # id = cursor.fetchone()[0]  # get the inserted row's id
+        cursor.close()
+        # return id
 
 def get_db_url():
     url = os.getenv("DATABASE_URL")

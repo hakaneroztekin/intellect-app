@@ -23,6 +23,16 @@ def insert_music(name, genre, duration_in_seconds, singer, year):
         cursor.close()
         # return id
 
+def insert_movie(title, year, duration_in_minutes, director, genre):
+    query ='INSERT INTO MOVIE(TITLE, YEAR, DURATION_IN_MINUTES, DIRECTOR, GENRE) VALUES(%s, %s, %s, %s, %s)'
+    url = get_db_url()
+    with dbapi2.connect(url) as connection:
+        cursor = connection.cursor()
+        cursor.execute(query, (title, year, duration_in_minutes, director, genre))
+        # id = cursor.fetchone()[0]  # get the inserted row's id
+        cursor.close()
+        # return id
+
 def get_db_url():
     url = os.getenv("DATABASE_URL")
     if url is None:

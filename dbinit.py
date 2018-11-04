@@ -4,9 +4,11 @@ import sys
 import psycopg2 as dbapi2
 
 INIT_STATEMENTS = [
-    "DROP TABLE USERS", # for testing purposes
-    "DROP TABLE MUSIC",
-    "DROP TABLE MOVIE",
+    "DROP TABLE IF EXISTS USERS", # to test changes quickly
+    "DROP TABLE IF EXISTS MUSIC",
+    "DROP TABLE IF EXISTS MOVIE",
+    "DROP TABLE IF EXISTS MUSIC_LIST",
+    "DROP TABLE IF EXISTS MOVIE_LIST",
 
     "CREATE TABLE IF NOT EXISTS USERS("
         "ID INTEGER,"
@@ -45,7 +47,13 @@ INIT_STATEMENTS = [
     "MUSIC_ID INTEGER,"
     "PRIMARY KEY(ID)"
     ")",
-    # "CREATE TABLE IF NOT EXISTS MOVIE_LIST(ID INTEGER, USER_ID INTEGER, MOVIE_ID INTEGER, PRIMARY KEY(ID))"
+
+    "CREATE TABLE IF NOT EXISTS MOVIE_LIST("
+    "ID INTEGER,"
+    "USER_ID INTEGER,"
+    "MOVIE_ID INTEGER,"
+    "PRIMARY KEY(ID)"
+    ")"
 
     # user references _list's USER_ID too.
 

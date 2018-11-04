@@ -2,6 +2,7 @@ import os
 import sys
 
 import psycopg2 as dbapi2
+import db_table_operations as tab
 
 INIT_STATEMENTS = [
     "DROP TABLE IF EXISTS USERS", # to test changes quickly
@@ -11,7 +12,7 @@ INIT_STATEMENTS = [
     "DROP TABLE IF EXISTS MOVIE_LIST",
 
     "CREATE TABLE IF NOT EXISTS USERS("
-        "ID INTEGER,"
+        "ID SERIAL,"
         "USERNAME VARCHAR(30) NOT NULL,"
         "NAME VARCHAR(30),"
         "SURNAME VARCHAR(30),"
@@ -22,7 +23,7 @@ INIT_STATEMENTS = [
     ")",
     
     "CREATE TABLE IF NOT EXISTS MUSIC("
-    "ID INTEGER,"  # REFERENCES MUSIC_LIST(MUSIC_ID)
+    "ID SERIAL,"  # REFERENCES MUSIC_LIST(MUSIC_ID)
     "NAME VARCHAR(30),"
     "GENRE VARCHAR(30),"
     "DURATION_IN_SECONDS INTEGER,"
@@ -32,7 +33,7 @@ INIT_STATEMENTS = [
     ")",
 
     "CREATE TABLE IF NOT EXISTS MOVIE("
-    "ID INTEGER," # REFERENCES MOVIE_LIST(MOVIE_ID)
+    "ID SERIAL," # REFERENCES MOVIE_LIST(MOVIE_ID)
     "TITLE VARCHAR(40),"
     "YEAR INTEGER,"
     "DURATION_IN_MINUTES INTEGER,"
@@ -81,4 +82,5 @@ if __name__ == "__main__":
         print("Usage: DATABASE_URL=url python dbinit.py", file=sys.stderr)
         sys.exit(1)
     initialize(url)
+    # tab.insert_user("username", "name", "surname", "password", 70, "gender")
 # jdbc:postgresql://localhost:32768/itucsdb

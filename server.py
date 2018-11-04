@@ -14,6 +14,8 @@
 from flask import Flask, render_template
 from flask_bootstrap import Bootstrap
 import os
+import db_table_operations as tab
+
 app = Flask(__name__)
 Bootstrap(app)
 
@@ -21,6 +23,7 @@ Bootstrap(app)
 @app.route("/")
 def home_page():
     print(os.environ)
+    tab.insert_user("username", "name", "surname", "password", 70, "gender")
     return render_template("homepage.html")
 
 

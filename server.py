@@ -13,13 +13,14 @@
 
 from flask import Flask, render_template
 from flask_bootstrap import Bootstrap
-
+import os
 app = Flask(__name__)
 Bootstrap(app)
 
 
 @app.route("/")
 def home_page():
+    print(os.environ)
     return render_template("homepage.html")
 
 

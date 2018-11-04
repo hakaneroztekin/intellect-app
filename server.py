@@ -1,15 +1,16 @@
 # Intellect app
+# (04.10.18) Database configuration, connection, Docker installation, initialization and insert statements
 #
 # Upcoming Project Works:
-# Views
-# Database configuration & connection testing (as announced in the original repo, itucsdb1809)
-# Database methods (INSERT INTO etc.)
-# Signup form (with DB actions)
-# Signin form
-# Authentication
-# Logout action
-# Movies, Musics form and its actions (adding, updating musics etc.)
-# Report, Presentation
+# Sequence I
+#   A successful signup operation: Front-end variables (Form) -> Models methods -> Database record
+#   Improving models.py
+#   Sign-in operation (Authentication)
+# Sequence II
+#   Movies, Musics form and its actions (add, delete)
+# Sequence III
+#   Wrap-up and Heroku tests
+#   Documentation, presentation
 
 from flask import Flask, render_template
 from flask_bootstrap import Bootstrap

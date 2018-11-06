@@ -14,10 +14,13 @@
 
 from flask import Flask, render_template
 from flask_bootstrap import Bootstrap
+from forms import LoginForm
 import os
 import db_table_operations as tab
+from config import Config
 
 app = Flask(__name__)
+app.config.from_object(Config)
 Bootstrap(app)
 
 
@@ -35,7 +38,8 @@ def mylists_page():
 
 @app.route('/signin')
 def signin_page():
-    return render_template("signin.html")
+    form = LoginForm()
+    return render_template("signin.html", title='Sign In', form=form)
 
 
 @app.route('/signup')

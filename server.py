@@ -36,7 +36,7 @@ def mylists_page():
     return render_template("mylists.html")
 
 
-@app.route('/signin')
+@app.route('/signin', methods=['GET', 'POST'])
 def signin_page():
     form = LoginForm()
     return render_template("signin.html", title='Sign In', form=form)

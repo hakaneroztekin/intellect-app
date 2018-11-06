@@ -1,17 +1,17 @@
 import os
 import sys
-
+from models import User, Music, Movie
 import psycopg2 as dbapi2
 
-def insert_user(username, name, surname, password, age, gender):
-    query ='INSERT INTO USERS (USERNAME, NAME, SURNAME, PASSWORD, AGE, GENDER) VALUES(%s, %s, %s, %s, %s, %s)'
+def insert_user(object):
+
+    query ='INSERT INTO USERS (USERNAME, NAME, SURNAME, EMAIL, PASSWORD, AGE, GENDER) VALUES(%s, %s, %s, %s, %s, %s, %s)'
     url = get_db_url()
     with dbapi2.connect(url) as connection:
         cursor = connection.cursor()
-        cursor.execute(query, (username, name, surname, password, age, gender))
+        cursor.execute(query, (object.username, object.name, object.surname, object.email , object.password, object.age, object.gender))
         # id = cursor.fetchone()[0]  # get the inserted row's id
         cursor.close()
-        # return id
 
 def insert_music(name, genre, duration_in_seconds, singer, year):
     query ='INSERT INTO MUSIC (NAME, GENRE, DURATION_IN_SECONDS, SINGER, YEAR) VALUES(%s, %s, %s, %s, %s)'

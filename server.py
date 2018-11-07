@@ -6,15 +6,16 @@
 #
 # Upcoming Project Works:
 # Sequence I (Remaining)
-#   Improving models.py and its methods
-#   Sign-in operation (Authentication)
+#   Improving models.py and its methods  (0,5 hr)
+#   Sign-in operation (Authentication) (2-4 hrs.)
 # Sequence II
-#   Fix Foreign keys
-#   Movies, Musics form and buttons (MyLists Page /Frontend)
-#   Related database operations (/Backend)
+#   Fix Foreign keys (1-1,5 hr)
+#   Movies, Musics form and buttons (MyLists Page /Frontend) (2 hrs)
+#   Related database operations (/Backend) (2 hrs)
 # Sequence III
-#   Wrap-up and Heroku tests
-#   Documentation, presentation
+#   Improve UI (1 hr)
+#   Wrap-up, and Heroku tests (1 hr)
+#   Documentation, presentation (2-4 hrs)
 
 from flask import Flask, render_template, request
 from flask_bootstrap import Bootstrap

@@ -1,13 +1,17 @@
 # Intellect app
+# Last 3 Works Done
 # (04.10.18) Database configuration, connection, Docker installation, initialization and insert statements
+# (06.10.18) A successful signup operation: Front-end variables (Form) -> Models methods -> Database record
+# (07.10.18) Fix Heroku App crash
 #
 # Upcoming Project Works:
-# Sequence I
-#   A successful signup operation: Front-end variables (Form) -> Models methods -> Database record
-#   Improving models.py
+# Sequence I (Remaining)
+#   Improving models.py and its methods
 #   Sign-in operation (Authentication)
 # Sequence II
-#   Movies, Musics form and its actions (add, delete)
+#   Fix Foreign keys
+#   Movies, Musics form and buttons (MyLists Page /Frontend)
+#   Related database operations (/Backend)
 # Sequence III
 #   Wrap-up and Heroku tests
 #   Documentation, presentation

@@ -28,7 +28,6 @@ Bootstrap(app)
 
 @app.route("/")
 def home_page():
-    print(os.environ)
 #   tab.insert_user("username", "name", "surname", "password", 70, "gender")
     return render_template("homepage.html")
 

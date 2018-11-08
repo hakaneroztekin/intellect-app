@@ -27,11 +27,23 @@
     </div>
 </header>
 
+
 <body>
         {% block content %}{%  endblock %}
 </body>
 
-<footer class="w3-container w3-border-top w3-bottom">
+<footer class="w3-container w3-border-top w3-bottom w3-text-white">
         <p>Developed by Hakan Eroztekin</p>
 </footer>
+
+{#  Base Background Image For All Pages #}
+{% block additional_styles %}
+    {#<style>#}
+    {#   body {#}
+    {#    background-image: url(base.jpg);#}
+    {#   }#}
+    {#</style>#}
+{% endblock %}
+
 </html>
+

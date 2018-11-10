@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<header class="w3-container w3-border-top w3-border-bottom">
+<header>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1"> {#mobile responsibility#}
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -20,10 +20,12 @@
     <title>{% block title %}{% endblock %}</title>
 
     <div class="w3-bar w3-text-yellow w3-large">
-        <a href="/mylists"><button class="w3-bar-item w3-button w3-right"><b>My Lists</b></button></a>
-        <a href="/signup"><button class="w3-bar-item w3-button w3-right"><b>Sign up</b></button></a>
-        <a href="/signin"><button class="w3-bar-item w3-button w3-right"><b>Sign in</b></button></a>
-        <a href="/"><button class="w3-bar-item w3-button w3-left"><b>Intellect</b></button></a>
+        <h5>
+            <a href="/mylists"><button class="w3-bar-item w3-button w3-right"><b>My Lists</b></button></a>
+            <a href="/signup"><button class="w3-bar-item w3-button w3-right"><b>Sign up</b></button></a>
+            <a href="/signin"><button class="w3-bar-item w3-button w3-right"><b>Sign in</b></button></a>
+            <a href="/"><button class="w3-bar-item w3-button w3-left"><b>Intellect</b></button></a>
+        </h5>
     </div>
 </header>
 
@@ -32,8 +34,8 @@
         {% block content %}{%  endblock %}
 </body>
 
-<footer class="w3-container w3-border-top w3-bottom w3-text-white">
-        <p>Developed by Hakan Eroztekin</p>
+<footer class="w3-container w3-text-white">
+{#        <p>Developed by Hakan Eroztekin</p>#}
 </footer>
 
 {#  Base Background Image For All Pages #}

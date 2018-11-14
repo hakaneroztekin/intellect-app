@@ -9,12 +9,17 @@ class User():
         self.password = password.encode()
         self.age = int(age)
         self.gender = gender
-        print("User model object created")
+        print("User object created")
 
 
 class Music():
-    def __init__(self):
-        print("I am a music.")
+    def __init__(self, name, genre, duration_in_minutes, singer, year):
+        self.name= name
+        self.genre = genre
+        self.duration_in_minutes = duration_in_minutes
+        self.singer = singer
+        self.year = year
+        print("Music object created")
 
 
 class Movie():

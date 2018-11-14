@@ -1,6 +1,6 @@
+from flask_login import UserMixin
 
-
-class User:
+class User(UserMixin):
     def __init__(self, username, name, surname, email, password, age, gender):
         self.username = username
         self.name = name
@@ -10,6 +10,12 @@ class User:
         self.age = int(age)
         self.gender = gender
         print("User object created")
+
+    # A method to get user id from DB might be needed like such. (will be implemented in SQL.)
+    # @login.user_loader
+    # def load_user(id):
+    #     return User.query.get(int(id))
+   
 
 
 class Music:

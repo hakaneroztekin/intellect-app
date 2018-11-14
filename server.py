@@ -17,8 +17,10 @@
 #   Wrap-up, and Heroku tests (1 hr)
 #   Documentation, presentation (2-4 hrs)
 
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect
 from flask_bootstrap import Bootstrap
+from flask_login import login_user
+
 from forms import LoginForm, RegistrationForm
 import os
 import db_table_operations as tab
@@ -45,6 +47,14 @@ def mylists_page():
 @app.route('/signin', methods=['GET', 'POST'])
 def signin_page():
     form = LoginForm()
+    if form.validate_on_submit():
+        # Username match olanı yükle
+        user = User.query.filter_by(username=form.username.data).first()  # might not work well with SQL
+
+        if user is None or not user.check_password(form.password.data):
+            return redirect('/signin')
+        login_user(user, remember=form.remember_me.data)
+        return redirect('/')
     return render_template("signin.html", form=form)
 
 

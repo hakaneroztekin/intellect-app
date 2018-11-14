@@ -1,6 +1,6 @@
 
 
-class User():
+class User:
     def __init__(self, username, name, surname, email, password, age, gender):
         self.username = username
         self.name = name
@@ -12,7 +12,7 @@ class User():
         print("User object created")
 
 
-class Music():
+class Music:
     def __init__(self, name, genre, duration_in_minutes, singer, year):
         self.name= name
         self.genre = genre
@@ -22,7 +22,7 @@ class Music():
         print("Music object created")
 
 
-class Movie():
+class Movie:
     def __init__(self, title, year, duration_in_minutes, director, genre):
         self.title = title
         self.year = year

@@ -23,5 +23,10 @@ class Music():
 
 
 class Movie():
-    def __init__(self):
-        print("I am a movie.")
+    def __init__(self, title, year, duration_in_minutes, director, genre):
+        self.title = title
+        self.year = year
+        self.genre = genre
+        self.duration_in_minutes = duration_in_minutes
+        self.director = director
+        print("Movie object created")

@@ -6,8 +6,8 @@
 #
 # Upcoming Project Works:
 # Sequence I (Remaining)
-#   Improving models.py and its methods  (0,5 hr)
 #   Sign-in operation (Authentication) (2-4 hrs.)
+#
 # Sequence II
 #   Fix Foreign keys (1-1,5 hr)
 #   Movies, Musics form and buttons (MyLists Page /Frontend) (2 hrs)

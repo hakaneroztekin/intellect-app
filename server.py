@@ -6,7 +6,9 @@
 #
 # Upcoming Project Works:
 # Sequence I (Remaining)
-#   Sign-in operation (Authentication) (2-4 hrs.)
+#   Sign-in operation (Authentication) (2-4 hrs.) -> 1-3 hrs left
+#   > Currently: Codes at Server.py (-almost- finished), just
+#     have to fix SQL query for a successful sign-in operation, then it's finished.
 #
 # Sequence II
 #   Fix Foreign keys (1-1,5 hr)
@@ -22,11 +24,9 @@ from flask_bootstrap import Bootstrap
 from flask_login import login_user
 
 from forms import LoginForm, RegistrationForm
-import os
-import db_table_operations as tab
 from config import Config
 from models import User, Music, Movie
-from db_table_operations import insert_user, insert_movie, insert_music
+from db_table_operations import *
 
 app = Flask(__name__)
 app.config.from_object(Config)
@@ -48,9 +48,7 @@ def mylists_page():
 def signin_page():
     form = LoginForm()
     if form.validate_on_submit():
-        # Username match olanı yükle
-        user = User.query.filter_by(username=form.username.data).first()  # might not work well with SQL
-
+        user = find_user_by_username(form.username.data)
         if user is None or not user.check_password(form.password.data):
             return redirect('/signin')
         login_user(user, remember=form.remember_me.data)

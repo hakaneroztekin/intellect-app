@@ -1,14 +1,14 @@
 # Intellect app
 # Last 3 Works Done
-# (04.10.18) Database configuration, connection, Docker installation, initialization and insert statements
-# (06.10.18) A successful signup operation: Front-end variables (Form) -> Models methods -> Database record
-# (07.10.18) Fix Heroku App crash
+# (06.11.18) A successful signup operation: Front-end variables (Form) -> Models methods -> Database record
+# (07.11.18) Fix Heroku App crash
+# (5.12.18)  Fix find user SQL for user sign in.
 #
 # Upcoming Project Works:
 # Sequence I (Remaining)
-#   Sign-in operation (Authentication) (2-4 hrs.) -> 1-3 hrs left
-#   > Currently: Codes at Server.py (-almost- finished), just
-#     have to fix SQL query for a successful sign-in operation, then it's finished.
+#   Sign-in operation (Authentication) (2-4 hrs.) -> 1 hr left
+#   > Add check_password in for sign-in
+#   > (optionally) You can show logged user in front-end
 #
 # Sequence II
 #   Fix Foreign keys (1-1,5 hr)
@@ -49,10 +49,11 @@ def signin_page():
     form = LoginForm()
     if form.validate_on_submit():
         user = find_user_by_username(form.username.data)
-        if user is None or not user.check_password(form.password.data):
-            return redirect('/signin')
-        login_user(user, remember=form.remember_me.data)
-        return redirect('/')
+        if user != 0: # if user is found
+            if user is None or not user.check_password(form.password.data):
+                return redirect('/signin')
+            login_user(user, remember=form.remember_me.data)
+            return redirect('/')
     return render_template("signin.html", form=form)
 
 

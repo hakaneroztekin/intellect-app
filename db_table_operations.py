@@ -15,11 +15,12 @@ def insert_user(object):
         cursor.close()
 
 def find_user_by_username(username):
-    query ='SELECT * FROM USERS WHERE(USERNAME = USERNAME) VALUES(%s)'
+    query = "SELECT * FROM USERS WHERE USERNAME = %s"
     url = get_db_url()
     with dbapi2.connect(url) as connection:
         cursor = connection.cursor()
-        cursor.execute(query, username)
+        rows_count = cursor.execute(query,(username,))
+        print("user is found")
         found_user = cursor.fetchone()
         # id = cursor.fetchone()[0]  # get the inserted row's id
         cursor.close()

@@ -3,6 +3,15 @@
 {% block content %}
     <p>Welcome {{ current_user.username }}!</p>
     <div class="w3-cell-row">
+        <div class ="w3-cell-column">
+            <div class="w3-bar w3-text-black w3-large w3-cell">
+                 <a href="/mylists/movies/add"><button class="w3-bar-item w3-button w3-center"><b>Add</b></button></a>
+                 <a href="/mylists/movies/update"><button class="w3-bar-item w3-button w3-center"><b>Update</b></button></a>
+                 <a href="/mylists/movies/delete"><button class="w3-bar-item w3-button w3-center"><b>Delete</b></button></a>
+
+                 <a href="/mylists/musics"><button class="w3-bar-item w3-button w3-center"><b>Musics></b></button></a>
+            </div>
+        </div>
         <div class="w3-cell-column">
                         {#  START - Forms  #}
             {% macro render_field(field) %}
@@ -34,15 +43,6 @@
 
             {#   END - Forms #}
 
-        </div>
-        <div class ="w3-cell-column">
-            <div class="w3-bar w3-text-black w3-large w3-cell">
-                 <a href="/mylists/movies"><button class="w3-bar-item w3-button w3-center"><b>Add</b></button></a>
-                 <a href="/mylists/musics"><button class="w3-bar-item w3-button w3-center"><b>Update</b></button></a>
-                 <a href="/mylists/musics"><button class="w3-bar-item w3-button w3-center"><b>Delete</b></button></a>
-
-                 <a href="/mylists/musics"><button class="w3-bar-item w3-button w3-center"><b>Musics></b></button></a>
-            </div>
         </div>
      </div>
 

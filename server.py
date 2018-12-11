@@ -58,19 +58,19 @@ def musics_page():
 
 
 @app.route('/mylists/musics/add')
-def movies_page():
+def musics_add_page():
     form = MovieAddForm(request.form)
     return render_template("add_musics.html", form=form)
 
 
 @app.route('/mylists/musics/update')
-def movies_page():
+def musics_update_page():
     form = MovieAddForm(request.form)
     return render_template("update_musics.html", form=form)
 
 
 @app.route('/mylists/musics/delete')
-def movies_page():
+def musics_delete_page():
     form = MovieAddForm(request.form)
     return render_template("delete_musics.html", form=form)
 
@@ -81,19 +81,19 @@ def movies_page():
 
 
 @app.route('/mylists/movies/add')
-def movies_page():
+def movies_add_page():
     form = MovieAddForm(request.form)
     return render_template("add_movies.html", form=form)
 
 
 @app.route('/mylists/movies/update')
-def movies_page():
+def movies_update_page():
     form = MovieAddForm(request.form)
     return render_template("update_movies.html", form=form)
 
 
 @app.route('/mylists/movies/delete')
-def movies_page():
+def movies_delete_page():
     form = MovieAddForm(request.form)
     return render_template("delete_movies.html", form=form)
 

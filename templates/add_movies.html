@@ -27,19 +27,24 @@
               </dd>
             {% endmacro %}
 
-
+{#    "CREATE TABLE IF NOT EXISTS MOVIE("#}
+{#    "ID SERIAL REFERENCES MOVIE_LIST(MOVIE_ID)," #}
+{#    "TITLE VARCHAR(40),"#}
+{#    "YEAR INTEGER,"#}
+{#    "DURATION_IN_MINUTES INTEGER,"#}
+{#    "DIRECTOR VARCHAR(30),"#}
+{#    "GENRE VARCHAR(30),"#}
+{#    "PRIMARY KEY(ID)"#}
+{#    ")",#}
                     <form method=post>
               <dl>
-                {{ render_field(form.username) }}
-                {{ render_field(form.email) }}
-                {{ render_field(form.name) }}
-                {{ render_field(form.surname) }}
-                {{ render_field(form.age) }}
-                {{ render_field(form.gender) }}
-                {{ render_field(form.password) }}
-                {{ render_field(form.confirm) }}
+                {{ render_field(form.title) }}
+                {{ render_field(form.year) }}
+                {{ render_field(form.duration_in_minutes) }}
+                {{ render_field(form.director) }}
+                {{ render_field(form.genre) }}
               </dl>
-              <p><input type=submit value=Register>
+              <p><input type=submit value="Add Movie">
 
             {#   END - Forms #}
 

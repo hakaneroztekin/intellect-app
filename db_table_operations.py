@@ -1,4 +1,4 @@
-from werkzeug.security import generate_password_hash
+from werkzeug.security import generate_password_hash, check_password_hash
 import os
 import sys
 import psycopg2 as dbapi2
@@ -10,9 +10,8 @@ def insert_user(object):
     with dbapi2.connect(url) as connection:
         cursor = connection.cursor()
         # hash the password
-        password_string = object.password.decode("utf-8")
-        print("User pw:" + password_string)
-        password_hash = generate_password_hash(password_string)
+        print("User pw:" + object.password)
+        password_hash = generate_password_hash(object.password)
         print("User pw:" + password_hash)
         cursor.execute(query, (object.username, object.name, object.surname, object.email,
                                password_hash, object.age, object.gender))
@@ -20,31 +19,23 @@ def insert_user(object):
         # id = cursor.fetchone()[0]  # get the inserted row's id
         cursor.close()
 
+
 def find_user_by_username(username):
     query = "SELECT * FROM USERS WHERE USERNAME = %s"
     url = get_db_url()
     with dbapi2.connect(url) as connection:
         cursor = connection.cursor()
         rows_count = cursor.execute(query,(username,))
-        print("user is found")
+        print("User is found in DB")
         found_user = cursor.fetchone()
         # id = cursor.fetchone()[0]  # get the inserted row's id
         cursor.close()
         return found_user
 
-def check_password(password):
+
+def check_password(user_password_hash, form_password):
     # compare the passwords
-    query = "SELECT * FROM USERS WHERE USERNAME = %s"
-    url = get_db_url()
-    with dbapi2.connect(url) as connection:
-        cursor = connection.cursor()
-        rows_count = cursor.execute(query,(password,))
-        print("user is found")
-        found_user = cursor.fetchone()
-        # id = cursor.fetchone()[0]  # get the inserted row's id
-        cursor.close()
-        return found_user
-
+    return check_password_hash(user_password_hash, form_password)
 
 # MUSIC TABLE OPERATIONS #
 def insert_music(name, genre, duration_in_seconds, singer, year):

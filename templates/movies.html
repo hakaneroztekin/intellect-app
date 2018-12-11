@@ -3,38 +3,6 @@
 {% block content %}
     <p>Welcome {{ current_user.username }}!</p>
     <div class="w3-cell-row">
-        <div class="w3-cell-column">
-                        {#  START - Forms  #}
-            {% macro render_field(field) %}
-              <dt>{{ field.label }}
-              <dd>{{ field(**kwargs)|safe }}
-              {% if field.errors %}
-                <ul class=errors>
-                {% for error in field.errors %}
-                  <li>{{ error }}</li>
-                {% endfor %}
-                </ul>
-              {% endif %}
-              </dd>
-            {% endmacro %}
-
-
-                    <form method=post>
-              <dl>
-                {{ render_field(form.username) }}
-                {{ render_field(form.email) }}
-                {{ render_field(form.name) }}
-                {{ render_field(form.surname) }}
-                {{ render_field(form.age) }}
-                {{ render_field(form.gender) }}
-                {{ render_field(form.password) }}
-                {{ render_field(form.confirm) }}
-              </dl>
-              <p><input type=submit value=Register>
-
-            {#   END - Forms #}
-
-        </div>
         <div class ="w3-cell-column">
             <div class="w3-bar w3-text-black w3-large w3-cell">
                  <a href="/mylists/movies"><button class="w3-bar-item w3-button w3-center"><b>Add</b></button></a>

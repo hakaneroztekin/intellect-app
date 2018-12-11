@@ -51,9 +51,11 @@ def home_page():
 def mylists_page():
     return render_template("mylists.html")
 
+
 @app.route('/mylists/musics')
 def musics_page():
     return render_template("musics.html")
+
 
 @app.route('/mylists/musics/add')
 def movies_page():
@@ -66,29 +68,35 @@ def movies_page():
     form = MovieAddForm(request.form)
     return render_template("update_musics.html", form=form)
 
+
 @app.route('/mylists/musics/delete')
 def movies_page():
     form = MovieAddForm(request.form)
     return render_template("delete_musics.html", form=form)
 
+
 @app.route('/mylists/movies')
 def movies_page():
     return render_template("movies.html")
+
 
 @app.route('/mylists/movies/add')
 def movies_page():
     form = MovieAddForm(request.form)
     return render_template("add_movies.html", form=form)
 
+
 @app.route('/mylists/movies/update')
 def movies_page():
     form = MovieAddForm(request.form)
     return render_template("update_movies.html", form=form)
 
+
 @app.route('/mylists/movies/delete')
 def movies_page():
     form = MovieAddForm(request.form)
     return render_template("delete_movies.html", form=form)
+
 
 @app.route('/signin', methods=['GET', 'POST'])
 def signin_page():
@@ -114,6 +122,7 @@ def signup_page():
                     form.password.data, form.age.data, form.gender.data)
         insert_user(user)
     return render_template("signup.html", form=form)
+
 
 if __name__ == "__main__":
     # login_manager = LoginManager()

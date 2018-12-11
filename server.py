@@ -53,6 +53,10 @@ def mylists_page():
 def musics_page():
     return render_template("musics.html")
 
+@app.route('/mylists/movies')
+def movies_page():
+    return render_template("movies.html")
+
 
 from models import User, Music, Movie # moved here to prevent import error (infinite loop)
 

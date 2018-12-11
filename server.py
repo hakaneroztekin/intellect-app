@@ -49,6 +49,11 @@ def home_page():
 def mylists_page():
     return render_template("mylists.html")
 
+@app.route('/mylists/musics')
+def musics_page():
+    return render_template("musics.html")
+
+
 from models import User, Music, Movie # moved here to prevent import error (infinite loop)
 
 @app.route('/signin', methods=['GET', 'POST'])

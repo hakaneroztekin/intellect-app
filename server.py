@@ -81,9 +81,13 @@ def movies_page():
 
 # other pages&functions are blocked
 # until user related movie add operation is realized
-@app.route('/mylists/movies/add')
+@app.route('/mylists/movies/add', methods=['GET', 'POST'])
 def movies_add_page():
     form = MovieAddForm(request.form)
+    if request.method == 'POST' and form.validate():
+        movie = Movie(form.title.data, form.year.data, form.duration_in_minutes.data,
+                      form.director.data, form.genre.data)
+        insert_movie(movie)
     return render_template("add_movies.html", form=form)
 
 #

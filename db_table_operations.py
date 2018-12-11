@@ -2,6 +2,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 import os
 import sys
 import psycopg2 as dbapi2
+
 # USER TABLE OPERATIONS #
 def insert_user(object):
     query ='INSERT INTO USERS (USERNAME, NAME, SURNAME, EMAIL, PASSWORD, AGE, GENDER) ' \
@@ -49,12 +50,12 @@ def insert_music(name, genre, duration_in_seconds, singer, year):
         # return id
 
 # MOVIE TABLE OPERATIONS #
-def insert_movie(title, year, duration_in_minutes, director, genre):
+def insert_movie(movie):
     query ='INSERT INTO MOVIE(TITLE, YEAR, DURATION_IN_MINUTES, DIRECTOR, GENRE) VALUES(%s, %s, %s, %s, %s)'
     url = get_db_url()
     with dbapi2.connect(url) as connection:
         cursor = connection.cursor()
-        cursor.execute(query, (title, year, duration_in_minutes, director, genre))
+        cursor.execute(query, (movie.title, movie.year, movie.duration_in_minutes, movie.director, movie.genre))
         # id = cursor.fetchone()[0]  # get the inserted row's id
         cursor.close()
         # return id

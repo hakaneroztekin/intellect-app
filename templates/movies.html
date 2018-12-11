@@ -1,0 +1,17 @@
+{%  extends "layout.html" %}
+{% block title %} Welcome to Intellect! {% endblock %}
+{% block content %}
+    <p>Welcome {{ current_user.username }}!</p>
+    <div class="w3-cell-row">
+
+    <div class="w3-bar w3-text-black w3-large w3-cell">
+         <button class="w3-bar-item w3-button w3-center"><b>Select your list:</b></button>
+         <a href="/mylists/movies"><button class="w3-bar-item w3-button w3-center"><b>Movies</b></button></a>
+         <a href="/mylists/musics"><button class="w3-bar-item w3-button w3-center"><b>Musics</b></button></a>
+  </div>
+
+  </div>
+
+
+
+{% endblock %}

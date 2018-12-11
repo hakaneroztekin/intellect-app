@@ -66,6 +66,10 @@ def movies_page():
     form = MovieAddForm(request.form)
     return render_template("update_musics.html", form=form)
 
+@app.route('/mylists/musics/delete')
+def movies_page():
+    form = MovieAddForm(request.form)
+    return render_template("delete_musics.html", form=form)
 
 @app.route('/mylists/movies')
 def movies_page():

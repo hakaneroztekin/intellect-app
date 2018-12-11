@@ -27,6 +27,7 @@ from forms import LoginForm, RegistrationForm
 from config import Config
 from models import User, Music, Movie
 from db_table_operations import *
+from werkzeug.security import generate_password_hash
 
 app = Flask(__name__)
 app.config.from_object(Config)

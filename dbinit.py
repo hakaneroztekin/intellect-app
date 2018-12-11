@@ -29,7 +29,7 @@ INIT_STATEMENTS = [
         "NAME VARCHAR(30),"
         "SURNAME VARCHAR(30),"
         "EMAIL VARCHAR(30),"
-        "PASSWORD VARCHAR(50),"
+        "PASSWORD VARCHAR(100),"
         "AGE INTEGER,"
         "GENDER VARCHAR(15),"
         "PRIMARY KEY(ID)"

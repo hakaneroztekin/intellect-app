@@ -57,8 +57,7 @@ def musics_page():
 
 @app.route('/mylists/movies')
 def movies_page():
-    form = MovieAddForm(request.form)
-    return render_template("movies.html", form=form)
+    return render_template("movies.html")
 
 @app.route('/mylists/movies/add')
 def movies_page():

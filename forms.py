@@ -23,5 +23,17 @@ class RegistrationForm(Form):
     ])
     confirm = PasswordField('Repeat Password')
 
+class MovieAddForm(Form):
+    username = StringField('Username', [validators.Length(min=3, max=30)])
+    email = StringField('Email Address', [validators.Length(min=4, max=30)])
+    name = StringField('Name', [validators.Length(min=0, max=20)])
+    surname = StringField('Surname', [validators.Length(min=0, max=20)])
+    age = StringField('Age', [validators.Length(min=0, max=20)])
+    gender = StringField('Gender', [validators.Length(min=0, max=15)])
+    password = PasswordField('New Password', [
+        validators.DataRequired(),
+        validators.EqualTo('confirm', message='Passwords must match')
+    ])
+    confirm = PasswordField('Repeat Password')
 
 

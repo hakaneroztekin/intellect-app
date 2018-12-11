@@ -5,15 +5,16 @@
 # (5.12.18)  Fix find user SQL for user sign in.
 #
 # Upcoming Project Works:
-# Sequence I (Remaining)
-#   Sign-in operation (Authentication) (2-4 hrs.) -> 1 hr left
-#   > Add check_password in for sign-in
-#   > (optionally) You can show logged user in front-end
+# Sequence I is finished -> though, check "login_user"
 #
 # Sequence II
+#   Movies, Musics form and buttons (MyLists Page /Frontend) (2-4 hrs)
+#   > Add the pages
+#   > Simplify movies, musics pages
+#   > Implement forms (add, update, delete, list) - UI side -
+#   > Implement SQL operations  - Backend side -
 #   Fix Foreign keys (1-1,5 hr)
-#   Movies, Musics form and buttons (MyLists Page /Frontend) (2 hrs)
-#   Related database operations (/Backend) (2 hrs)
+
 # Sequence III
 #   Improve UI (1 hr)
 #   Wrap-up, and Heroku tests (1 hr)
@@ -23,11 +24,12 @@ from flask import Flask, render_template, request, redirect
 from flask_bootstrap import Bootstrap
 from flask_login import login_user, LoginManager
 
-from forms import LoginForm, RegistrationForm
+from forms import *
 from config import Config
 import models
 from db_table_operations import *
 from werkzeug.security import generate_password_hash
+from models import User, Music, Movie
 
 app = Flask(__name__)
 app.config.from_object(Config)
@@ -55,10 +57,13 @@ def musics_page():
 
 @app.route('/mylists/movies')
 def movies_page():
-    return render_template("movies.html")
+    form = MovieAddForm(request.form)
+    return render_template("movies.html", form=form)
 
-
-from models import User, Music, Movie # moved here to prevent import error (infinite loop)
+@app.route('/mylists/movies/add')
+def movies_page():
+    form = MovieAddForm(request.form)
+    return render_template("add_movies.html", form=form)
 
 @app.route('/signin', methods=['GET', 'POST'])
 def signin_page():

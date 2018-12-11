@@ -69,6 +69,11 @@ def movies_page():
     form = MovieAddForm(request.form)
     return render_template("update_movies.html", form=form)
 
+@app.route('/mylists/movies/delete')
+def movies_page():
+    form = MovieAddForm(request.form)
+    return render_template("delete_movies.html", form=form)
+
 @app.route('/signin', methods=['GET', 'POST'])
 def signin_page():
     form = LoginForm()

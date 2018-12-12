@@ -2,6 +2,9 @@
 {% block title %} Welcome to Intellect! {% endblock %}
 {% block content %}
     <p>Welcome {{ current_user.username }}!</p>
+
+    <h2>Movies</h2>
+
     <div class="w3-cell-row">
         <div class ="w3-cell-column">
             <div class="w3-bar w3-text-black w3-large w3-cell">
@@ -11,6 +14,36 @@
 
                  <a href="/mylists/musics"><button class="w3-bar-item w3-button w3-center"><b>Musics></b></button></a>
             </div>
+        {#   START - List Movies in DB          #}
+            <div class="w3-container">
+
+      {% if movies %}
+      <table class="w3-table-all">
+        <thead>
+          <tr class="w3-orange">
+            <th>#</th>
+            <th>Title</th>
+            <th>Year</th>
+            <th>Duration</th>
+            <th>Director</th>
+            <th>Genre</th>
+
+          </tr>
+        </thead>
+           {% for movie in movies %}
+        <tr class="w3-text-orange">
+          <td>{{ movie[0] }}</td>
+          <td>{{ movie[1] }}</td>
+          <td>{{ movie[2] }}</td>
+          <td>{{ movie[3] }}</td>
+          <td>{{ movie[4] }}</td>
+          <td>{{ movie[5] }}</td>
+        </tr>
+      {% endfor %}
+      </table>
+    </div>
+        {% endif %}
+        {#            END #}
         </div>
      </div>
 

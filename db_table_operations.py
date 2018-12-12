@@ -51,6 +51,19 @@ def insert_music(music):
         # return id
 
 # MOVIE TABLE OPERATIONS #
+def get_movies():
+    query ='SELECT * FROM MOVIE'
+    url = get_db_url()
+    with dbapi2.connect(url) as connection:
+        cursor = connection.cursor()
+        cursor.execute(query)
+        movies = cursor.fetchall()
+        # id = cursor.fetchone()[0]  # get the inserted row's id
+        cursor.close()
+        return movies
+        # return id
+
+
 def insert_movie(movie):
     query ='INSERT INTO MOVIE(TITLE, YEAR, DURATION_IN_MINUTES, DIRECTOR, GENRE) VALUES(%s, %s, %s, %s, %s)'
     url = get_db_url()

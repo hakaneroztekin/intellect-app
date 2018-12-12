@@ -81,7 +81,8 @@ def musics_add_page():
 
 @app.route('/mylists/movies', methods=['GET', 'POST'])
 def movies_page():
-    return render_template("movies.html")
+    movies = get_movies()
+    return render_template("movies.html", movies = movies)
 
 @app.route('/mylists/movies/add', methods=['GET', 'POST'])
 def movies_add_page():

@@ -10,13 +10,12 @@
 # Sequence II
 #   Movies, Musics form and buttons (MyLists Page /Frontend) (2-4 hrs)
 #   > Add the pages
-#   > Simplify movies, musics pages
 #   > Implement forms (add, update, delete, list) - UI side -
 #   > Implement SQL operations  - Backend side -
 #   +Fix Foreign keys (1-1,5 hr)
 
 # Sequence III
-#   Improve UI (1 hr)
+#   Improve UI (Simplify movies, musics pages || mobile responsibility etc.) (1 hr)
 #   Wrap-up, and Heroku tests (1 hr)
 #   Documentation, presentation (2-4 hrs)
 

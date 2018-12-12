@@ -10,7 +10,8 @@
 # Sequence II
 #   Movies, Musics form and buttons (MyLists Page /Frontend) (2-4 hrs)
 #   > Add the pages
-#   > Implement forms (add, update, delete, list) - UI side -
+#   > Implement forms (add, update, delete) - UI side -
+#   > Implement list operation (list musics/movies in db, and in users list)
 #   > Implement SQL operations  - Backend side -
 #   +Fix Foreign keys (1-1,5 hr)
 

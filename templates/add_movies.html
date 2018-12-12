@@ -26,16 +26,6 @@
               {% endif %}
               </dd>
             {% endmacro %}
-
-{#    "CREATE TABLE IF NOT EXISTS MOVIE("#}
-{#    "ID SERIAL REFERENCES MOVIE_LIST(MOVIE_ID)," #}
-{#    "TITLE VARCHAR(40),"#}
-{#    "YEAR INTEGER,"#}
-{#    "DURATION_IN_MINUTES INTEGER,"#}
-{#    "DIRECTOR VARCHAR(30),"#}
-{#    "GENRE VARCHAR(30),"#}
-{#    "PRIMARY KEY(ID)"#}
-{#    ")",#}
                     <form method=post>
               <dl>
                 {{ render_field(form.title) }}

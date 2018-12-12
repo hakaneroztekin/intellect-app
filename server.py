@@ -91,6 +91,7 @@ def movies_add_page():
         movie = Movie(form.title.data, form.year.data, form.duration_in_minutes.data,
                       form.director.data, form.genre.data)
         insert_movie(movie)
+        return redirect('/mylists/movies')
     return render_template("add_movies.html", form=form)
 
 #

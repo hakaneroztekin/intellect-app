@@ -47,17 +47,17 @@ def home_page():
     return render_template("homepage.html")
 
 
-@app.route('/mylists')
+@app.route('/mylists', methods=['GET', 'POST'])
 def mylists_page():
     return render_template("mylists.html")
 
 
-@app.route('/mylists/musics')
+@app.route('/mylists/musics', methods=['GET', 'POST'])
 def musics_page():
     return render_template("musics.html")
 
 
-@app.route('/mylists/musics/add')
+@app.route('/mylists/musics/add', methods=['GET', 'POST'])
 def musics_add_page():
     form = MusicAddForm(request.form)
     if request.method == 'POST' and form.validate():
@@ -67,19 +67,19 @@ def musics_add_page():
     return render_template("add_musics.html", form=form)
 #
 #
-# @app.route('/mylists/musics/update')
+# @app.route('/mylists/musics/update', methods=['GET', 'POST'])
 # def musics_update_page():
 #     form = MovieAddForm(request.form)
 #     return render_template("update_musics.html", form=form)
 #
 #
-# @app.route('/mylists/musics/delete')
+# @app.route('/mylists/musics/delete', methods=['GET', 'POST'])
 # def musics_delete_page():
 #     form = MovieAddForm(request.form)
 #     return render_template("delete_musics.html", form=form)
 
 
-@app.route('/mylists/movies')
+@app.route('/mylists/movies', methods=['GET', 'POST'])
 def movies_page():
     return render_template("movies.html")
 

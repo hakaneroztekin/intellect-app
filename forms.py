@@ -31,4 +31,16 @@ class MovieAddForm(Form):
     genre = StringField('Genre', [validators.Length(min=0, max=20)])
 
 
+{#     Music DB Model   #}
+{#    "NAME VARCHAR(30),"#}
+{#    "GENRE VARCHAR(30),"#}
+{#    "DURATION_IN_SECONDS VARCHAR(8),"#}
+{#    "SINGER VARCHAR(30),"#}
+{#    "YEAR VARCHAR(8),"#}
 
+class MusicAddForm(Form):
+    name = StringField('Name', [validators.Length(min=3, max=30)])
+    genre = StringField('Genre', [validators.Length(min=4, max=30)])
+    duration_in_seconds = StringField('Duration(seconds)', [validators.Length(min=0, max=20)])
+    singer = StringField('Singer', [validators.Length(min=0, max=20)])
+    year = StringField('Year', [validators.Length(min=0, max=20)])

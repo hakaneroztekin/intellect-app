@@ -28,19 +28,15 @@
               </dd>
             {% endmacro %}
 
-
                     <form method=post>
               <dl>
-                {{ render_field(form.username) }}
-                {{ render_field(form.email) }}
                 {{ render_field(form.name) }}
-                {{ render_field(form.surname) }}
-                {{ render_field(form.age) }}
-                {{ render_field(form.gender) }}
-                {{ render_field(form.password) }}
-                {{ render_field(form.confirm) }}
+                {{ render_field(form.genre) }}
+                {{ render_field(form.duration_in_minutes) }}
+                {{ render_field(form.singer) }}
+                {{ render_field(form.year) }}
               </dl>
-              <p><input type=submit value=Register>
+              <p><input type=submit value="Add Movie">
 
             {#   END - Forms #}
 

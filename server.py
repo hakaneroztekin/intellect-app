@@ -95,16 +95,20 @@ def movies_add_page():
     return render_template("add_movies.html", form=form)
 
 #
-# @app.route('/mylists/movies/update')
+# @app.route('/mylists/movies/update', methods=['GET', 'POST'])
 # def movies_update_page():
 #     form = MovieAddForm(request.form)
 #     return render_template("update_movies.html", form=form)
 #
 #
-# @app.route('/mylists/movies/delete')
-# def movies_delete_page():
-#     form = MovieAddForm(request.form)
-#     return render_template("delete_movies.html", form=form)
+@app.route('/mylists/movies/delete', methods=['GET', 'POST'])
+def movies_delete_page():
+    form = MovieDeleteForm(request.form)
+    id = form.movie_id.data
+    if id.__len__() > 0:
+        delete_movie(id)
+        return redirect('/mylists/movies')
+    return render_template("delete_movies.html", form=form)
 
 
 @app.route('/signin', methods=['GET', 'POST'])

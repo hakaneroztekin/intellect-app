@@ -74,6 +74,17 @@ def insert_movie(movie):
         cursor.close()
         # return id
 
+def delete_movie(movie_id):
+    query = "DELETE FROM MOVIE WHERE ID = CAST(%s AS INTEGER)"
+    url = get_db_url()
+    with dbapi2.connect(url) as connection:
+        cursor = connection.cursor()
+        cursor.execute(query, (movie_id,))
+        # id = cursor.fetchone()[0]  # get the inserted row's id
+        cursor.close()
+        print("Movie with id " + movie_id + " deleted")
+        # return id
+
         
 def get_db_url():
     url = os.getenv("DATABASE_URL")

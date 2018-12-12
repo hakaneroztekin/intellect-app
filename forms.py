@@ -23,6 +23,7 @@ class RegistrationForm(Form):
     ])
     confirm = PasswordField('Repeat Password')
 
+# MOVIE OPERATIONS
 class MovieAddForm(Form):
     title = StringField('Title', [validators.Length(min=3, max=30)])
     year = StringField('Year', [validators.Length(min=4, max=30)])
@@ -30,8 +31,10 @@ class MovieAddForm(Form):
     director = StringField('Director', [validators.Length(min=0, max=20)])
     genre = StringField('Genre', [validators.Length(min=0, max=20)])
 
+class MovieDeleteForm(Form):
+    movie_id = StringField('Id', [validators.Length(min=1, max=5)])
 
-
+#MUSIC OPERATIONS
 class MusicAddForm(Form):
     name = StringField('Name', [validators.Length(min=3, max=30)])
     genre = StringField('Genre', [validators.Length(min=3, max=30)])

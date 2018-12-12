@@ -19,10 +19,10 @@ class User(UserMixin):
  #       return User.query.get(int(id))
 
 class Music:
-    def __init__(self, name, genre, duration_in_minutes, singer, year):
+    def __init__(self, name, genre, duration_in_seconds, singer, year):
         self.name= name
         self.genre = genre
-        self.duration_in_minutes = duration_in_minutes
+        self.duration_in_seconds = duration_in_seconds
         self.singer = singer
         self.year = year
         print("Music object created")

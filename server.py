@@ -61,7 +61,7 @@ def musics_page():
 def musics_add_page():
     form = MusicAddForm(request.form)
     if request.method == 'POST' and form.validate():
-        music = Music(form.title.name, form.year.genre, form.duration_in_seconds.data,
+        music = Music(form.name.data, form.genre.data, form.duration_in_seconds.data,
                       form.singer.data, form.year.data)
         insert_music(music)
     return render_template("add_musics.html", form=form)

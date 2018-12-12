@@ -34,7 +34,7 @@ class MovieAddForm(Form):
 
 class MusicAddForm(Form):
     name = StringField('Name', [validators.Length(min=3, max=30)])
-    genre = StringField('Genre', [validators.Length(min=4, max=30)])
+    genre = StringField('Genre', [validators.Length(min=3, max=30)])
     duration_in_seconds = StringField('Duration(seconds)', [validators.Length(min=0, max=20)])
     singer = StringField('Singer', [validators.Length(min=0, max=20)])
     year = StringField('Year', [validators.Length(min=0, max=20)])

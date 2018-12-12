@@ -39,12 +39,13 @@ def check_password(user_password_hash, form_password):
     return check_password_hash(user_password_hash, form_password)
 
 # MUSIC TABLE OPERATIONS #
-def insert_music(name, genre, duration_in_seconds, singer, year):
+def insert_music(music):
     query ='INSERT INTO MUSIC (NAME, GENRE, DURATION_IN_SECONDS, SINGER, YEAR) VALUES(%s, %s, %s, %s, %s)'
     url = get_db_url()
     with dbapi2.connect(url) as connection:
         cursor = connection.cursor()
-        cursor.execute(query, (name, genre, duration_in_seconds, singer, year))
+        cursor.execute(query, (music.name, music.genre, music.duration_in_seconds,
+                               music.singer, music.year))
         # id = cursor.fetchone()[0]  # get the inserted row's id
         cursor.close()
         # return id

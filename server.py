@@ -56,11 +56,15 @@ def mylists_page():
 def musics_page():
     return render_template("musics.html")
 
-#
-# @app.route('/mylists/musics/add')
-# def musics_add_page():
-#     form = MovieAddForm(request.form)
-#     return render_template("add_musics.html", form=form)
+
+@app.route('/mylists/musics/add')
+def musics_add_page():
+    form = MusicAddForm(request.form)
+    if request.method == 'POST' and form.validate():
+        music = Music(form.title.name, form.year.genre, form.duration_in_seconds.data,
+                      form.singer.data, form.year.data)
+        insert_music(music)
+    return render_template("add_musics.html", form=form)
 #
 #
 # @app.route('/mylists/musics/update')
@@ -79,8 +83,6 @@ def musics_page():
 def movies_page():
     return render_template("movies.html")
 
-# other pages&functions are blocked
-# until user related movie add operation is realized
 @app.route('/mylists/movies/add', methods=['GET', 'POST'])
 def movies_add_page():
     form = MovieAddForm(request.form)

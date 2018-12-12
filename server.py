@@ -13,7 +13,7 @@
 #   > Simplify movies, musics pages
 #   > Implement forms (add, update, delete, list) - UI side -
 #   > Implement SQL operations  - Backend side -
-#   Fix Foreign keys (1-1,5 hr)
+#   +Fix Foreign keys (1-1,5 hr)
 
 # Sequence III
 #   Improve UI (1 hr)

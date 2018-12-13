@@ -1,19 +1,12 @@
 # Intellect app
 # Upcoming Project Works:
 # + Sequence I is finished
+# + Sequence II is finished
 #
-# Sequence II
-#   Movies, Musics form and buttons (MyLists Page /Frontend) (2-4 hrs)
-#   + Add the pages
-#   > Implement forms (add, update, delete) - UI side -
-#   > Implement list operation (list musics/movies in db, and in users list)
-#   > Implement SQL operations  - Backend side -
-#   +Fix Foreign keys (1-1,5 hr)
-
 # Sequence III
-#   Improve UI (Simplify movies, musics pages || mobile responsibility etc.) (1 hr)
-#   Wrap-up, and Heroku tests (1 hr)
-#   Documentation, presentation (2-4 hrs)
+#   Realize similar operations done on movies for music pages&lists (2 hr)
+#   Improve UI (Improve UX - mobile responsibility etc.) (30 mins)
+#   Test the whole system, realize same op. on Heroku (1 hr)
 
 from flask import Flask, render_template, request, redirect
 from flask_bootstrap import Bootstrap
@@ -115,8 +108,6 @@ def movies_delete_page():
         delete_movie(id)
         return redirect('/mylists/movies')
     return render_template("delete_movies.html", form=form)
-
-
 
 
 @app.route('/signin', methods=['GET', 'POST'])

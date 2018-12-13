@@ -1,6 +1,6 @@
 # Intellect app
 # Upcoming Project Works:
-# Sequence I is finished -> though, check "login_user"
+# + Sequence I is finished
 #
 # Sequence II
 #   Movies, Musics form and buttons (MyLists Page /Frontend) (2-4 hrs)

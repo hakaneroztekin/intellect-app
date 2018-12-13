@@ -110,12 +110,13 @@ def signin_page():
         found_user = find_user_by_username(form.username.data)
         user = User(found_user[1], found_user[2], found_user[3], found_user[4],
                     found_user[5], found_user[6], found_user[7])
+        user.set_id(found_user[0]) # to load user id
         if user is None or not check_password(user.password, form.password.data):
             print("User signing failed")
             return redirect('/signin')
         login_user(user, remember=form.remember_me.data) # will be reanalyzed
         print("User signed successful")
-        return redirect('/')
+        return redirect('/mylists')
     return render_template("signin.html", form=form)
 
 
@@ -126,6 +127,7 @@ def signup_page():
         user = User(form.username.data, form.name.data, form.surname.data, form.email.data,
                     form.password.data, form.age.data, form.gender.data)
         insert_user(user)
+        user.set_id()
     return render_template("signup.html", form=form)
 
 

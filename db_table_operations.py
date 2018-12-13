@@ -21,6 +21,7 @@ def insert_user(object):
         cursor.close()
 
 
+
 def find_user_by_username(username):
     query = "SELECT * FROM USERS WHERE USERNAME = %s"
     url = get_db_url()
@@ -33,6 +34,18 @@ def find_user_by_username(username):
         cursor.close()
         return found_user
 
+
+def find_user_by_id(id):
+    query = "SELECT * FROM USERS WHERE ID = %s"
+    url = get_db_url()
+    with dbapi2.connect(url) as connection:
+        cursor = connection.cursor()
+        rows_count = cursor.execute(query,(id,))
+        print("User is found in DB")
+        found_user = cursor.fetchone()
+        # id = cursor.fetchone()[0]  # get the inserted row's id
+        cursor.close()
+        return found_user
 
 def check_password(user_password_hash, form_password):
     # compare the passwords

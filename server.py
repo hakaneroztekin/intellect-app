@@ -39,6 +39,8 @@ def home_page():
 
 @app.route('/mylists', methods=['GET', 'POST'])
 def mylists_page():
+    user_movies = userlist_get_movies()
+    #  user_musics = get_user_musics()
     return render_template("mylists.html")
 
 
@@ -135,7 +137,6 @@ def signup_page():
         user = User(form.username.data, form.name.data, form.surname.data, form.email.data,
                     form.password.data, form.age.data, form.gender.data)
         insert_user(user)
-        user.set_id()
     return render_template("signup.html", form=form)
 
 

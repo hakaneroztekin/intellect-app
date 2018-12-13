@@ -61,6 +61,19 @@ def userlist_add_movie(user_id, movie_id):
         # id = cursor.fetchone()[0]  # get the inserted row's id
         cursor.close()
         # return id
+def userlist_get_movies():
+    query ='SELECT MOVIE.TITLE, USERS.USERNAME FROM MOVIE_LIST ' \
+           'INNER JOIN MOVIE ON MOVIE_LIST.MOVIE_ID = MOVIE.ID ' \
+           'INNER JOIN USERS ON MOVIE_LIST.USER_ID = USERS.ID'
+    url = get_db_url()
+    with dbapi2.connect(url) as connection:
+        cursor = connection.cursor()
+        cursor.execute(query)
+        movies = cursor.fetchall()
+        # id = cursor.fetchone()[0]  # get the inserted row's id
+        cursor.close()
+        return movies
+        # return id
 
 # MUSIC TABLE OPERATIONS #
 def insert_music(music):

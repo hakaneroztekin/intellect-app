@@ -3,7 +3,7 @@ import os
 import sys
 import psycopg2 as dbapi2
 
-# USER TABLE OPERATIONS #
+# USER AUTHENTICATION TABLE OPERATIONS #
 def insert_user(object):
     query ='INSERT INTO USERS (USERNAME, NAME, SURNAME, EMAIL, PASSWORD, AGE, GENDER) ' \
            'VALUES(%s, %s, %s, %s, %s, %s, %s)'
@@ -19,7 +19,6 @@ def insert_user(object):
         # print("User pw:" + object.password.decode("utf-8"))
         # id = cursor.fetchone()[0]  # get the inserted row's id
         cursor.close()
-
 
 
 def find_user_by_username(username):
@@ -47,9 +46,21 @@ def find_user_by_id(id):
         cursor.close()
         return found_user
 
+
 def check_password(user_password_hash, form_password):
     # compare the passwords
     return check_password_hash(user_password_hash, form_password)
+
+# USER LIST OPERATIONS
+def userlist_add_movie(user_id, movie_id):
+    query = 'INSERT INTO MOVIE_LIST (USER_ID, MOVIE_ID) VALUES(%s, %s)'
+    url = get_db_url()
+    with dbapi2.connect(url) as connection:
+        cursor = connection.cursor()
+        cursor.execute(query, (user_id, movie_id))
+        # id = cursor.fetchone()[0]  # get the inserted row's id
+        cursor.close()
+        # return id
 
 # MUSIC TABLE OPERATIONS #
 def insert_music(music):

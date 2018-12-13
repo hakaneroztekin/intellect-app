@@ -77,6 +77,7 @@ def movies_page():
     if request.method == 'POST':
         movie_id = request.form['movie_id']
         user_id = request.form['user_id']
+        userlist_add_movie(user_id, movie_id)
         return redirect('/mylists/movies')
 
     return render_template("movies.html", movies = movies)

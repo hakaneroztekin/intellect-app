@@ -22,21 +22,18 @@ class User(UserMixin):
         print("User object created")
 
     @login.user_loader
-    def load_user(id): # burda sorun var, id=0 yolluyor hep, init'te verdiğim değeri yani.
+    def load_user(id):
         if id == 0:
             print("User not logged in, id is ", id)
             return
         else:
             found_user = find_user_by_id(int(id))
-            print("found user username: ", found_user)
             return found_user
 
     def __repr__(self):
         return '<User %r>' % self.username
 
-    def set_id(self, id): # grab row ID and set it as user object ID
-        #user = find_user_by_username(self.username)
-        #self.id = user[0]  # user[0] is user ID
+    def set_id(self, id):
         self.id = id
 
     def get_id(self):

@@ -31,6 +31,14 @@ class MovieAddForm(Form):
     director = StringField('Director', [validators.Length(min=0, max=20)])
     genre = StringField('Genre', [validators.Length(min=0, max=20)])
 
+class MovieUpdateForm(Form):
+    id = StringField('Id of The Movie', [validators.Length(min=1, max=30)])
+    title = StringField('Title', [validators.Length(min=3, max=30)])
+    year = StringField('Year', [validators.Length(min=4, max=30)])
+    duration_in_minutes = StringField('Duration', [validators.Length(min=0, max=20)])
+    director = StringField('Director', [validators.Length(min=0, max=20)])
+    genre = StringField('Genre', [validators.Length(min=0, max=20)])
+
 class MovieDeleteForm(Form):
     movie_id = StringField('Id', [validators.Length(min=1, max=5)])
 
@@ -41,7 +49,3 @@ class MusicAddForm(Form):
     duration_in_seconds = StringField('Duration(seconds)', [validators.Length(min=0, max=20)])
     singer = StringField('Singer', [validators.Length(min=0, max=20)])
     year = StringField('Year', [validators.Length(min=0, max=20)])
-
-
-#USER LIST OPERATIONS
-#MOVIE OPERATIONS

@@ -81,7 +81,7 @@ def movies_page():
         userlist_add_movie(user_id, movie_id)
         return redirect('/mylists/movies')
 
-    return render_template("movies.html", movies = movies)
+    return render_template("movies.html", movies= movies)
 
 @app.route('/mylists/movies/add', methods=['GET', 'POST'])
 def movies_add_page():
@@ -93,13 +93,20 @@ def movies_add_page():
         return redirect('/mylists/movies')
     return render_template("add_movies.html", form=form)
 
-#
-# @app.route('/mylists/movies/update', methods=['GET', 'POST'])
-# def movies_update_page():
-#     form = MovieAddForm(request.form)
-#     return render_template("update_movies.html", form=form)
-#
-#
+
+@app.route('/mylists/movies/update', methods=['GET', 'POST'])
+def movies_update_page():
+    form = MovieUpdateForm(request.form)
+    if request.method == 'POST' and form.validate():
+        movie = Movie(form.title.data, form.year.data, form.duration_in_minutes.data,
+                      form.director.data, form.genre.data)
+        movie_id = form.id.data  # which movie to update
+        update_movie(movie_id, movie)
+        return redirect('/mylists/movies')
+
+    return render_template("update_movies.html", form=form)
+
+
 @app.route('/mylists/movies/delete', methods=['GET', 'POST'])
 def movies_delete_page():
     form = MovieDeleteForm(request.form)

@@ -111,6 +111,25 @@ def insert_movie(movie):
         cursor.close()
         # return id
 
+def update_movie(movie_id, movie):
+    query = "UPDATE MOVIE " \
+            "SET TITLE = %s, " \
+            "YEAR = %s, " \
+            "DURATION_IN_MINUTES = %s, " \
+            "DIRECTOR = %s, " \
+            "GENRE = %s " \
+            "WHERE ID = %s "
+    url = get_db_url()
+    with dbapi2.connect(url) as connection:
+        cursor = connection.cursor()
+        cursor.execute(query, (movie.title, movie.year, movie.duration_in_minutes,
+                              movie.director, movie.genre, movie_id,))
+        # id = cursor.fetchone()[0]  # get the inserted row's id
+        cursor.close()
+        print("Movie with id " + movie_id + " deleted")
+        # return id
+
+
 def delete_movie(movie_id):
     query = "DELETE FROM MOVIE WHERE ID = CAST(%s AS INTEGER)"
     url = get_db_url()

@@ -1,15 +1,10 @@
 # Intellect app
-# Last 3 Works Done
-# (06.11.18) A successful signup operation: Front-end variables (Form) -> Models methods -> Database record
-# (07.11.18) Fix Heroku App crash
-# (5.12.18)  Fix find user SQL for user sign in.
-#
 # Upcoming Project Works:
 # Sequence I is finished -> though, check "login_user"
 #
 # Sequence II
 #   Movies, Musics form and buttons (MyLists Page /Frontend) (2-4 hrs)
-#   > Add the pages
+#   + Add the pages
 #   > Implement forms (add, update, delete) - UI side -
 #   > Implement list operation (list musics/movies in db, and in users list)
 #   > Implement SQL operations  - Backend side -
@@ -26,21 +21,16 @@ from flask_login import login_user, LoginManager
 
 from forms import *
 from config import Config
-import models
 from db_table_operations import *
 from werkzeug.security import generate_password_hash
-from models import User, Music, Movie
 
 app = Flask(__name__)
 app.config.from_object(Config)
 Bootstrap(app)
 
-global login
 login = LoginManager(app)
 
-def get_login():
-    return login
-
+from models import User, Music, Movie
 @app.route("/")
 def home_page():
 #   tab.insert_user("username", "name", "surname", "password", 70, "gender")
@@ -111,6 +101,8 @@ def movies_delete_page():
     return render_template("delete_movies.html", form=form)
 
 
+
+
 @app.route('/signin', methods=['GET', 'POST'])
 def signin_page():
     form = LoginForm()
@@ -121,7 +113,7 @@ def signin_page():
         if user is None or not check_password(user.password, form.password.data):
             print("User signing failed")
             return redirect('/signin')
-       # login_user(user, remember=form.remember_me.data) # will be reanalyzed
+        login_user(user, remember=form.remember_me.data) # will be reanalyzed
         print("User signed successful")
         return redirect('/')
     return render_template("signin.html", form=form)

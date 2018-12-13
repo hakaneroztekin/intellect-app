@@ -1,7 +1,10 @@
 from flask_login import UserMixin
 
-#from server import get_login
-#login = get_login()
+
+def initialize_login():
+    from server import login
+    global login
+    login = login
 
 class User(UserMixin):
     def __init__(self, username, name, surname, email, password, age, gender):
@@ -14,9 +17,9 @@ class User(UserMixin):
         self.gender = gender
         print("User object created")
 
- #   @login.user_loader
- #   def load_user(id):
- #       return User.query.get(int(id))
+    @login.user_loader
+    def load_user(id):
+        return User.query.get(int(id)) # change this to return users from DB with the given ID
 
 class Music:
     def __init__(self, name, genre, duration_in_seconds, singer, year):

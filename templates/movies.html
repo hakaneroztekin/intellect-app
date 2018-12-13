@@ -27,7 +27,7 @@
             <th>Duration</th>
             <th>Director</th>
             <th>Genre</th>
-
+            <th>Add to Your List</th>
           </tr>
         </thead>
            {% for movie in movies %}
@@ -38,6 +38,18 @@
           <td>{{ movie[3] }}</td>
           <td>{{ movie[4] }}</td>
           <td>{{ movie[5] }}</td>
+
+            <form method=post>
+
+                 {# get movie id#}
+
+                <td>
+                    <input type="hidden" name="movie_id" value="{{ movie[0] }}">
+                    <input type=submit value="Add">
+                </td>
+            </form>
+
+
         </tr>
       {% endfor %}
       </table>

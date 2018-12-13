@@ -41,3 +41,7 @@ class MusicAddForm(Form):
     duration_in_seconds = StringField('Duration(seconds)', [validators.Length(min=0, max=20)])
     singer = StringField('Singer', [validators.Length(min=0, max=20)])
     year = StringField('Year', [validators.Length(min=0, max=20)])
+
+
+#USER LIST OPERATIONS
+#MOVIE OPERATIONS

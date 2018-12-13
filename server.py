@@ -72,6 +72,13 @@ def musics_add_page():
 @app.route('/mylists/movies', methods=['GET', 'POST'])
 def movies_page():
     movies = get_movies()
+
+
+    if request.method == 'POST':
+        movie_id = request.form['movie_id']
+
+        return redirect('/mylists/movies')
+
     return render_template("movies.html", movies = movies)
 
 @app.route('/mylists/movies/add', methods=['GET', 'POST'])

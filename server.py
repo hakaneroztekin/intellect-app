@@ -41,7 +41,7 @@ def home_page():
 def mylists_page():
     user_movies = userlist_get_movies()
     #  user_musics = get_user_musics()
-    return render_template("mylists.html")
+    return render_template("mylists.html", user_movies=user_movies)
 
 
 @app.route('/mylists/musics', methods=['GET', 'POST'])
@@ -74,7 +74,6 @@ def musics_add_page():
 @app.route('/mylists/movies', methods=['GET', 'POST'])
 def movies_page():
     movies = get_movies()
-
 
     if request.method == 'POST':
         movie_id = request.form['movie_id']

@@ -62,7 +62,7 @@ def userlist_add_movie(user_id, movie_id):
         cursor.close()
         # return id
 def userlist_get_movies():
-    query ='SELECT MOVIE.TITLE, USERS.USERNAME FROM MOVIE_LIST ' \
+    query ='SELECT MOVIE.* FROM MOVIE_LIST ' \
            'INNER JOIN MOVIE ON MOVIE_LIST.MOVIE_ID = MOVIE.ID ' \
            'INNER JOIN USERS ON MOVIE_LIST.USER_ID = USERS.ID'
     url = get_db_url()

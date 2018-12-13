@@ -1,7 +1,7 @@
 {%  extends "layout.html" %}
 {% block title %} Welcome to Intellect! {% endblock %}
 {% block content %}
-    <p>Welcome {{ current_user.username }}!</p>
+    <p>Welcome {{ current_user[2] }}!</p>
 
     <h2>Movies</h2>
 
@@ -45,6 +45,7 @@
 
                 <td>
                     <input type="hidden" name="movie_id" value="{{ movie[0] }}">
+                    <input type="hidden" name="user_id" value="{{ current_user[0] }}">
                     <input type=submit value="Add">
                 </td>
             </form>

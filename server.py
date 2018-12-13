@@ -81,7 +81,7 @@ def movies_page():
         userlist_add_movie(user_id, movie_id)
         return redirect('/mylists/movies')
 
-    return render_template("movies.html", movies= movies)
+    return render_template("movies.html", movies= sorted(movies))
 
 @app.route('/mylists/movies/add', methods=['GET', 'POST'])
 def movies_add_page():

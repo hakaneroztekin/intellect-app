@@ -62,7 +62,7 @@ def musics_page():
         music_id = request.form['music_id']
         user_id = request.form['user_id']
         userlist_add_music(user_id, music_id)
-        return redirect('/mylists/musics')
+        return redirect('/mylists')
 
     return render_template("musics.html", musics=sorted(musics))
 
@@ -74,6 +74,8 @@ def musics_add_page():
         music = Music(form.name.data, form.genre.data, form.duration_in_seconds.data,
                       form.singer.data, form.year.data)
         insert_music(music)
+        return redirect('/mylists/musics')
+
     return render_template("add_musics.html", form=form)
 
 
@@ -107,9 +109,9 @@ def movies_page():
         movie_id = request.form['movie_id']
         user_id = request.form['user_id']
         userlist_add_movie(user_id, movie_id)
-        return redirect('/mylists/movies')
+        return redirect('/mylists')
 
-    return render_template("movies.html", movies= sorted(movies))
+    return render_template("movies.html", movies=sorted(movies))
 
 @app.route('/mylists/movies/add', methods=['GET', 'POST'])
 def movies_add_page():

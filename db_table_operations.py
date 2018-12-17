@@ -99,6 +99,30 @@ def userlist_get_musics():
         return musics
         # return id
 
+
+def userlist_delete_movie(user_id, movie_id):
+    query = "DELETE FROM MOVIE_LIST WHERE USER_ID = CAST(%s AS INTEGER) AND MOVIE_ID = CAST(%s AS INTEGER)"
+    url = get_db_url()
+    with dbapi2.connect(url) as connection:
+        cursor = connection.cursor()
+        cursor.execute(query, (user_id, movie_id))
+        # id = cursor.fetchone()[0]  # get the inserted row's id
+        cursor.close()
+        print("Movie with id " + movie_id + " from user with id " + user_id + " deleted")
+        # return id
+
+
+def userlist_delete_music(user_id, music_id):
+    query = "DELETE FROM MUSIC_LIST WHERE USER_ID = CAST(%s AS INTEGER) AND MUSIC_ID = CAST(%s AS INTEGER)"
+    url = get_db_url()
+    with dbapi2.connect(url) as connection:
+        cursor = connection.cursor()
+        cursor.execute(query, (user_id, music_id))
+        # id = cursor.fetchone()[0]  # get the inserted row's id
+        cursor.close()
+        print("Music with id " + music_id + " from user with id " + user_id + " deleted")
+        # return id
+
 # MUSIC TABLE OPERATIONS #
 def get_musics():
     query ='SELECT * FROM MUSIC'

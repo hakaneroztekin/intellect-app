@@ -34,6 +34,21 @@ def home_page():
 def mylists_page():
     user_movies = userlist_get_movies()
     user_musics = userlist_get_musics()
+
+    if request.method == 'POST':
+        movie_id = request.form['movie_id']
+        user_id = request.form['user_id']
+        music_id = request.form['music_id']
+
+        if movie_id != "0":  # request to delete movie
+            userlist_delete_movie(user_id, movie_id)
+            print("delete movie with id " + movie_id)
+            return redirect('/mylists')
+
+        elif music_id != "0":  # request to delete music
+            userlist_delete_music(user_id, music_id)
+            return redirect('/mylists')
+
     return render_template("mylists.html",
                            user_movies=user_movies,
                            user_musics=user_musics)

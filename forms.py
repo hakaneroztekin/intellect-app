@@ -49,3 +49,11 @@ class MusicAddForm(Form):
     duration_in_seconds = StringField('Duration(seconds)', [validators.Length(min=0, max=20)])
     singer = StringField('Singer', [validators.Length(min=0, max=20)])
     year = StringField('Year', [validators.Length(min=0, max=20)])
+
+class MusicUpdateForm(Form):
+    id = StringField('Id of The Music', [validators.Length(min=1, max=30)])
+    name = StringField('Name', [validators.Length(min=3, max=30)])
+    genre = StringField('Genre', [validators.Length(min=3, max=30)])
+    duration_in_seconds = StringField('Duration(seconds)', [validators.Length(min=0, max=20)])
+    singer = StringField('Singer', [validators.Length(min=0, max=20)])
+    year = StringField('Year', [validators.Length(min=0, max=20)])

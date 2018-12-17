@@ -87,6 +87,26 @@ def insert_music(music):
         cursor.close()
         # return id
 
+
+def update_music(music_id, music):
+    query = "UPDATE MUSIC " \
+            "SET NAME = %s, " \
+            "GENRE = %s, " \
+            "DURATION_IN_SECONDS = %s, " \
+            "SINGER = %s, " \
+            "YEAR = %s " \
+            "WHERE ID = %s "
+    url = get_db_url()
+    with dbapi2.connect(url) as connection:
+        cursor = connection.cursor()
+        cursor.execute(query, (music.name, music.genre, music.duration_in_seconds,
+                               music.singer, music.year, music_id,))
+        # id = cursor.fetchone()[0]  # get the inserted row's id
+        cursor.close()
+        print("Music with id " + music_id + " deleted")
+        # return id
+
+
 # MOVIE TABLE OPERATIONS #
 def get_movies():
     query ='SELECT * FROM MOVIE'

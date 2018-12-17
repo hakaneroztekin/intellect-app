@@ -50,12 +50,18 @@ def musics_add_page():
                       form.singer.data, form.year.data)
         insert_music(music)
     return render_template("add_musics.html", form=form)
-#
-#
-# @app.route('/mylists/musics/update', methods=['GET', 'POST'])
-# def musics_update_page():
-#     form = MovieAddForm(request.form)
-#     return render_template("update_musics.html", form=form)
+
+
+@app.route('/mylists/musics/update', methods=['GET', 'POST'])
+def musics_update_page():
+    form = MusicUpdateForm(request.form)
+    if request.method == 'POST' and form.validate():
+        music = Music(form.name.data, form.genre.data, form.duration_in_seconds.data,
+                      form.singer.data, form.year.data)
+        music_id = form.id.data  # which music to update
+        update_music(music_id, music)
+        return redirect('/mylists/musics')
+    return render_template("update_musics.html", form=form)
 #
 #
 # @app.route('/mylists/musics/delete', methods=['GET', 'POST'])

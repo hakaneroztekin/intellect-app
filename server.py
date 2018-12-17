@@ -171,7 +171,7 @@ def signup_page():
         user = User(form.username.data, form.name.data, form.surname.data, form.email.data,
                     form.password.data, form.age.data, form.gender.data)
         insert_user(user)
-        return redirect('/mylists')
+        return redirect('/signin')
 
     return render_template("signup.html", form=form)
 

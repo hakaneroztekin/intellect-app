@@ -105,7 +105,17 @@ def update_music(music_id, music):
         cursor.close()
         print("Music with id " + music_id + " deleted")
         # return id
-
+        
+def delete_music(music_id):
+    query = "DELETE FROM MUSIC WHERE ID = CAST(%s AS INTEGER)"
+    url = get_db_url()
+    with dbapi2.connect(url) as connection:
+        cursor = connection.cursor()
+        cursor.execute(query, (music_id,))
+        # id = cursor.fetchone()[0]  # get the inserted row's id
+        cursor.close()
+        print("Music with id " + music_id + " deleted")
+        # return id
 
 # MOVIE TABLE OPERATIONS #
 def get_movies():

@@ -64,10 +64,14 @@ def musics_update_page():
     return render_template("update_musics.html", form=form)
 #
 #
-# @app.route('/mylists/musics/delete', methods=['GET', 'POST'])
-# def musics_delete_page():
-#     form = MovieAddForm(request.form)
-#     return render_template("delete_musics.html", form=form)
+@app.route('/mylists/musics/delete', methods=['GET', 'POST'])
+def musics_delete_page():
+    form = MusicDeleteForm(request.form)
+    id = form.music_id.data
+    if id.__len__() > 0:
+        delete_music(id)
+        return redirect('/mylists/musics')
+    return render_template("delete_musics.html", form=form)
 
 
 @app.route('/mylists/movies', methods=['GET', 'POST'])

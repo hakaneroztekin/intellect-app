@@ -57,3 +57,6 @@ class MusicUpdateForm(Form):
     duration_in_seconds = StringField('Duration(seconds)', [validators.Length(min=0, max=20)])
     singer = StringField('Singer', [validators.Length(min=0, max=20)])
     year = StringField('Year', [validators.Length(min=0, max=20)])
+
+class MusicDeleteForm(Form):
+    music_id = StringField('Id', [validators.Length(min=1, max=5)])

@@ -33,8 +33,10 @@ def home_page():
 @app.route('/mylists', methods=['GET', 'POST'])
 def mylists_page():
     user_movies = userlist_get_movies()
-    #  user_musics = get_user_musics()
-    return render_template("mylists.html", user_movies=user_movies)
+    user_musics = userlist_get_musics()
+    return render_template("mylists.html",
+                           user_movies=user_movies,
+                           user_musics=user_musics)
 
 
 @app.route('/mylists/musics', methods=['GET', 'POST'])

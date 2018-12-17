@@ -85,6 +85,20 @@ def userlist_get_movies():
         return movies
         # return id
 
+def userlist_get_musics():
+    query ='SELECT MUSIC.* FROM MUSIC_LIST ' \
+           'INNER JOIN MUSIC ON MUSIC_LIST.MUSIC_ID = MUSIC.ID ' \
+           'INNER JOIN USERS ON MUSIC_LIST.USER_ID = USERS.ID'
+    url = get_db_url()
+    with dbapi2.connect(url) as connection:
+        cursor = connection.cursor()
+        cursor.execute(query)
+        musics = cursor.fetchall()
+        # id = cursor.fetchone()[0]  # get the inserted row's id
+        cursor.close()
+        return musics
+        # return id
+
 # MUSIC TABLE OPERATIONS #
 def get_musics():
     query ='SELECT * FROM MUSIC'

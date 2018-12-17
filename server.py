@@ -4,7 +4,7 @@
 # + Sequence II is finished
 #
 # Sequence III
-#   Realize similar operations done on movies for music pages&lists (2 hr)
+#   + Realize similar operations done on movies for music pages&lists (2 hr)
 #   Improve UI (Improve UX - mobile responsibility etc.) (30 mins)
 #   Test the whole system, realize same op. on Heroku (1 hr)
 

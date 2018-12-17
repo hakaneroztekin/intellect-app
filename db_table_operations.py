@@ -52,6 +52,16 @@ def check_password(user_password_hash, form_password):
     return check_password_hash(user_password_hash, form_password)
 
 # USER LIST OPERATIONS
+def userlist_add_music(user_id, music_id):
+    query = 'INSERT INTO MUSIC_LIST (USER_ID, MUSIC_ID) VALUES(%s, %s)'
+    url = get_db_url()
+    with dbapi2.connect(url) as connection:
+        cursor = connection.cursor()
+        cursor.execute(query, (user_id, music_id))
+        # id = cursor.fetchone()[0]  # get the inserted row's id
+        cursor.close()
+        # return id
+
 def userlist_add_movie(user_id, movie_id):
     query = 'INSERT INTO MOVIE_LIST (USER_ID, MOVIE_ID) VALUES(%s, %s)'
     url = get_db_url()

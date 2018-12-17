@@ -44,7 +44,7 @@ def musics_page():
     if request.method == 'POST':
         music_id = request.form['music_id']
         user_id = request.form['user_id']
-       # userlist_add_music(user_id, music_id)
+        userlist_add_music(user_id, music_id)
         return redirect('/mylists/musics')
 
     return render_template("musics.html", musics=sorted(musics))

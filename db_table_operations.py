@@ -76,6 +76,19 @@ def userlist_get_movies():
         # return id
 
 # MUSIC TABLE OPERATIONS #
+def get_musics():
+    query ='SELECT * FROM MUSIC'
+    url = get_db_url()
+    with dbapi2.connect(url) as connection:
+        cursor = connection.cursor()
+        cursor.execute(query)
+        movies = cursor.fetchall()
+        # id = cursor.fetchone()[0]  # get the inserted row's id
+        cursor.close()
+        return movies
+        # return id
+
+
 def insert_music(music):
     query ='INSERT INTO MUSIC (NAME, GENRE, DURATION_IN_SECONDS, SINGER, YEAR) VALUES(%s, %s, %s, %s, %s)'
     url = get_db_url()

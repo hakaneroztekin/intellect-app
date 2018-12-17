@@ -5,10 +5,16 @@
 
 <a class="w3-right">Welcome {{ current_user[2] }}!</a>
 
+    <div class="w3-container">
+        <h4><b>COMMUNITY LISTS</b></h4>
+    <div class="column right" style="background-color:#d2be0e;">
+          <a href="/mylists/movies"><button class="w3-bar-item w3-button w3-center"><b>Movies</b></button></a>
+          <br>
+          <a href="/mylists/musics"><button class="w3-bar-item w3-button w3-center"><b>Musics</b></button></a>
+     </div>
+    </div>
 
 <div class="row">
-
-    <div class="column left">
         <h4><b>YOUR LISTS</b></h4>
         <h5><b>Movies</b></h5>
         {#        List movies here#}
@@ -48,7 +54,6 @@
                 </td>
             </form>
 
-
         </tr>
       {% endfor %}
       </table>
@@ -60,14 +65,8 @@
         <h5><b>Musics</b></h5>
         {#        List musics here#}
 
-    </div>
 
-    <h4><b>COMMUNITY LISTS</b></h4>
-    <div class="column right" style="background-color:#d2be0e;">
-          <a href="/mylists/movies"><button class="w3-bar-item w3-button w3-center"><b>Movies</b></button></a>
-          <br>
-          <a href="/mylists/musics"><button class="w3-bar-item w3-button w3-center"><b>Musics</b></button></a>
-     </div>
+    </div>
 
 </div>
 

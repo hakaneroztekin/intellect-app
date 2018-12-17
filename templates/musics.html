@@ -13,7 +13,49 @@
             </div>
         </div>
      </div>
+        {#   START - List Musics in DB          #}
+            <div class="w3-container">
 
+      {% if musics %}
+      <table class="w3-table-all">
+        <thead>
+          <tr class="w3-orange">
+            <th>#</th>
+            <th>Name</th>
+            <th>Genre</th>
+            <th>Duration(s)</th>
+            <th>Singer</th>
+            <th>Year</th>
+            <th>Add to Your List</th>
+          </tr>
+        </thead>
+           {% for music in musics %}
+        <tr class="w3-text-black">
+          <td>{{ music[0] }}</td>
+          <td>{{ music[1] }}</td>
+          <td>{{ music[2] }}</td>
+          <td>{{ music[3] }}</td>
+          <td>{{ music[4] }}</td>
+          <td>{{ music[5] }}</td>
+
+            <form method=post>
+
+                 {# get music id#}
+
+                <td>
+                    <input type="hidden" name="music_id" value="{{ music[0] }}">
+                    <input type="hidden" name="user_id" value="{{ current_user[0] }}">
+                    <input type=submit value="Add">
+                </td>
+            </form>
+
+
+        </tr>
+      {% endfor %}
+      </table>
+    </div>
+        {% endif %}
+        {#            END #}
 
 
 {% endblock %}

@@ -1,19 +1,7 @@
 {%  extends "layout.html" %}
 {% block title %} Welcome to Intellect! {% endblock %}
+
 {% block content %}
-
-
-<a class="w3-right"></a>
-
-    <div class="w3-bar w3-text-brown w3-large w3-border-top w3-border-bottom">
-        <h5>
-            <a href="/mylists"><a class="w3-bar-item w3-left"><b>COMMUNITY LISTS: </b></a></a>
-            <a href="/mylists/movies"><button class="w3-bar-item w3-button w3-left"><b>Movies</b></button></a>
-            <a href="/mylists/musics"><button class="w3-bar-item w3-button w3-left"><b>Musics</b></button></a>
-            <button class="w3-bar-item w3-button w3-right"><b>Welcome {{ current_user[2] }}!</b></button>
-        </h5>
-    </div>
-
 <div class="row">
         <h4><b>YOUR LISTS</b></h4>
         <h5><b>Movies</b></h5>
@@ -61,8 +49,9 @@
     </div>
         {% endif %}
         {#            END #}
-
-        <br><br><br>
+    </div>
+    <br><br><br><br>
+    <div class="row">
         <h5><b>Musics</b></h5>
         {#        List musics here#}
              {#   START - List Musics in DB          #}

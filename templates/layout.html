@@ -54,12 +54,24 @@
 
     <div class="w3-bar w3-text-yellow w3-large">
         <h5>
-            <a href="/mylists"><button class="w3-bar-item w3-button w3-right"><b>My Lists</b></button></a>
+            <a href="/mylists"><button class="w3-bar-item w3-button w3-right"><b>Your Lists</b></button></a>
             <a href="/signup"><button class="w3-bar-item w3-button w3-right"><b>Sign up</b></button></a>
             <a href="/signin"><button class="w3-bar-item w3-button w3-right"><b>Sign in</b></button></a>
             <a href="/"><button class="w3-bar-item w3-button w3-left"><b>Intellect</b></button></a>
         </h5>
     </div>
+
+{% block secondmenubar %}
+    <div class="w3-bar w3-text-brown w3-large w3-border-top w3-border-bottom">
+        <h5>
+            <a href="/mylists"><a class="w3-bar-item w3-left"><b>COMMUNITY LISTS: </b></a></a>
+            <a href="/mylists/movies"><button class="w3-bar-item w3-button w3-left"><b>Movies</b></button></a>
+            <a href="/mylists/musics"><button class="w3-bar-item w3-button w3-left"><b>Musics</b></button></a>
+            <button class="w3-bar-item w3-button w3-right"><b>Welcome {{ current_user[2] }}!</b></button>
+        </h5>
+    </div>
+{% endblock %}
+
 </header>
 
 
@@ -74,11 +86,11 @@
 {% endblock %}
 {#  Base Background Image For All Pages #}
 {% block additional_styles %}
-    {#<style>#}
-    {#   body {#}
-    {#    background-image: url(base.jpg);#}
-    {#   }#}
-    {#</style>#}
+    <style>
+       body {
+        padding-left: 10px;
+       }
+    </style>
 {% endblock %}
 
 </html>

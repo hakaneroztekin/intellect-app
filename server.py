@@ -156,8 +156,8 @@ def signin_page():
         if user is None or not check_password(user.password, form.password.data):
             print("User signing failed")
             return redirect('/signin')
-        login_user(user, remember=form.remember_me.data) # will be reanalyzed
-        print("User signed successful")
+        login_user(user, remember=form.remember_me.data)
+        print("User signed successfully")
         return redirect('/mylists')
     return render_template("signin.html", form=form)
 
@@ -169,6 +169,8 @@ def signup_page():
         user = User(form.username.data, form.name.data, form.surname.data, form.email.data,
                     form.password.data, form.age.data, form.gender.data)
         insert_user(user)
+        return redirect('/mylists')
+
     return render_template("signup.html", form=form)
 
 

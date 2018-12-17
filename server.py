@@ -1,12 +1,5 @@
 # Intellect app
-# Upcoming Project Works:
-# + Sequence I is finished
-# + Sequence II is finished
-#
-# Sequence III
-#   + Realize similar operations done on movies for music pages&lists (2 hr)
-#   Improve UI (Improve UX - mobile responsibility etc.) (30 mins)
-#   Test the whole system, realize same op. on Heroku (1 hr)
+# Developed by Hakan Eroztekin
 
 from flask import Flask, render_template, request, redirect
 from flask_bootstrap import Bootstrap
@@ -177,7 +170,4 @@ def signup_page():
 
 
 if __name__ == "__main__":
-    # login_manager = LoginManager()
-    # login_manager.init_app(app)
-    # login_manager.login_view = 'login'
     app.run()

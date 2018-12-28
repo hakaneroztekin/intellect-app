@@ -695,14 +695,14 @@ The code part above, font is determined. Then the rest of the code layouts the g
 
 Below you can see the jquery and Bootstrap scripts initializations.
 
-.. code-block:: python
+.. code-block:: html
 
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 Now we create "title" block which will be different for each page.
 
-.. code-block:: python
+.. code-block:: html
 
    <title>{% block title %}{% endblock %}</title>
 

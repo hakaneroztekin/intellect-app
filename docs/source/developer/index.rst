@@ -4,31 +4,18 @@ Developer Guide
 Database Design
 ---------------
 
-**explain the database design of your project**
-
-.. figure:: /ERdiagram.png
-   :scale: 50 %
-   :alt: map to buried treasure
-      This is the caption of the figure (a simple paragraph).
-
-Two:
+There are three main tables; **USERS, MOVIE** and **MUSIC**.
+USERS table is designed to keep the information for user. MOVIE table is for movies, and MUSIC table is for musics.
+There are also two additional tables; **MOVIE_LIST** and **MUSIC_LIST**. These are designed to keep user's favorited musics/movies.
+These keep ID's for USER and MOVIE/MUSIC.
 
 .. figure:: ERdiagram.png
    :scale: 50 %
-   :alt: map to buried treasure
-      This is the caption of the figure (a simple paragraph).
-
-Three:
-
-.. figure:: ../developer/ERdiagram.png
-   :scale: 50 %
-   :alt: map to buried treasure
-      This is the caption of the figure (a simple paragraph).
-
+   :alt: ER Diagram
+      ER Diagram for Intellect Database Design
 
 Code
 ----
-
 The code can be explained in three parts.
 
 - Python & SQL

@@ -3,10 +3,14 @@ User Guide
 
 As a visitor of Intellect, you are welcomed with the homepage.
 
+.. image:: homepage.png
+
 **#add homepage**
 
 Homepage
 --------
+
+
 .. figure:: ../user/Images/homepage.png
   :scale: 100%
   :alt: Homepage

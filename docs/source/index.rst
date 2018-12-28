@@ -7,7 +7,7 @@ Welcome to itucsdb1809's documentation!
 
    * Hakan Eröztekin
 
-**Keep your favorite musics and movies in Intellect.
+Keep your favorite musics and movies in Intellect.
 Intellect keeps each users favorites and also community favorites.
 Each user can contribute to community lists, as in Wikipedia.
 Then user can pick their favorites in that list to shape his/her own list.

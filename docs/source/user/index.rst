@@ -11,7 +11,7 @@ Homepage
 --------
 
 
-.. figure:: ../user/Images/homepage.png
+.. figure:: http://itucsdb1809.herokuapp.com/static/image/bg.jpg
   :scale: 100%
   :alt: Homepage
   :align: center

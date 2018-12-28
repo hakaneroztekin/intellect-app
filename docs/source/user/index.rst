@@ -2,21 +2,29 @@ User Guide
 ==========
 
 As a visitor of Intellect, you are welcomed with the homepage.
-**#add homepage**::
 
-   .. figure:: static/image/homepage.png
-      :scale: 50 %
-      :alt: map to buried treasure
+**#add homepage**
+
+Homepage
+--------
+.. figure:: ../user/Images/homepage.png
+  :scale: 100%
+  :alt: Homepage
+  :align: center
+
+ Explanation..
+
+.. figure:: ../../images/homepage.png
+   :scale: 50 %
+   :alt: map to buried treasure
 
       This is the caption of the figure (a simple paragraph).
 
 
-.. toctree::
-
 You should sign up to get full benefit of Intellect. For that, you should visit the sign up page.
 
 **#add sign up**
-   .. image:: static/images/homepage.png
+   .. image:: images/homepage.png
    .. image:: docs/source/images/homepage.png
 
    .. figure:: static/image/homepage.png
@@ -84,6 +92,7 @@ We can add couple more, and update / delete.
 
 **#operations on community movies**::
 
+
    .. figure:: picture.png
       :scale: 50 %
       :alt: map to buried treasure
@@ -96,8 +105,3 @@ We can add couple more, and update / delete.
 
 
    Hakan Eröztekin
-   member2
-   member3
-   member4
-   member5
-   

@@ -4,7 +4,7 @@ User Guide
 As a visitor of Intellect, you are welcomed with the homepage.
 **#add homepage**::
 
-   .. figure:: docs/source/images/homepage.png
+   .. figure:: static/image/homepage.png
       :scale: 50 %
       :alt: map to buried treasure
 
@@ -16,7 +16,7 @@ As a visitor of Intellect, you are welcomed with the homepage.
 You should sign up to get full benefit of Intellect. For that, you should visit the sign up page.
 **#add sign up**::
 
-   .. figure:: images/homepage.png
+   .. figure:: /static/image/homepage.png
       :scale: 50 %
       :alt: map to buried treasure
 

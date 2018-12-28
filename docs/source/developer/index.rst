@@ -6,7 +6,25 @@ Database Design
 
 **explain the database design of your project**
 
-**include the E/R diagram(s)**
+.. figure:: /ERdiagram.png
+   :scale: 50 %
+   :alt: map to buried treasure
+      This is the caption of the figure (a simple paragraph).
+
+Two:
+
+.. figure:: ERdiagram.png
+   :scale: 50 %
+   :alt: map to buried treasure
+      This is the caption of the figure (a simple paragraph).
+
+Three:
+
+.. figure:: ../developer/ERdiagram.png
+   :scale: 50 %
+   :alt: map to buried treasure
+      This is the caption of the figure (a simple paragraph).
+
 
 Code
 ----

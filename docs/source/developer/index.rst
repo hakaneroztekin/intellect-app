@@ -927,5 +927,4 @@ the information is transfered to the related variable and it's processed in the 
 
 
 .. toctree::
-
-   Hakan Eröztekin
+    member1

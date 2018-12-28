@@ -105,7 +105,4 @@ We can add couple more, and update / delete.
 
 
 .. toctree::
-
-
-
-   Hakan Eröztekin
+    member1

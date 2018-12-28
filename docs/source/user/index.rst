@@ -3,62 +3,32 @@ User Guide
 
 As a visitor of Intellect, you are welcomed with the homepage.
 
-.. image:: homepage.png
-
-**#add homepage**
-
-Homepage
---------
-
-
-.. figure:: http://itucsdb1809.herokuapp.com/static/image/bg.jpg
-  :scale: 100%
-  :alt: Homepage
-  :align: center
-
- Explanation..
-
-.. figure:: ../../images/homepage.png
+.. figure:: images/homepage.png
    :scale: 50 %
-   :alt: map to buried treasure
-
-      This is the caption of the figure (a simple paragraph).
+   :alt: Intellect homepage
+      Intellect homepage
 
 
 You should sign up to get full benefit of Intellect. For that, you should visit the sign up page.
 
-**#add sign up**
-   .. image:: images/homepage.png
-   .. image:: docs/source/images/homepage.png
-
-   .. figure:: static/image/homepage.png
-      :scale: 50 %
-      :alt: sign up
-
-      This is the caption of the figure (a simple paragraph).
-
+.. figure:: signup.png
+   :scale: 50 %
+   :alt: Signup page
+      Intellect signup page
 
 
 With a successful sign-up you are redirected to the sign-in page.
-**#add sign in**::
-
-   .. figure:: picture.png
-      :scale: 50 %
-      :alt: map to buried treasure
-
-      This is the caption of the figure (a simple paragraph).
-
-
-.. toctree::
+.. figure:: signin.png
+   :scale: 50 %
+   :alt: Signin page
+      Intellect signin page
 
 After the sign-in now you can start using Intellect. Initially, your lists are empty as it is shown below.
-**#add my lists (empty) **::
 
-   .. figure:: picture.png
-      :scale: 50 %
-      :alt: map to buried treasure
-
-      This is the caption of the figure (a simple paragraph).
+.. figure:: mylists-empty.png
+   :scale: 50 %
+   :alt: Mylists page
+      Intellect Mylists page
 
 
 .. toctree::

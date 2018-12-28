@@ -10,7 +10,7 @@ There are also two additional tables; **MOVIE_LIST** and **MUSIC_LIST**. These a
 These keep ID's for USER and MOVIE/MUSIC.
 
 .. figure:: ERdiagram.png
-   :scale: 50 %
+   :scale: 100 %
    :alt: ER Diagram
       ER Diagram for Intellect Database Design
 
@@ -922,8 +922,6 @@ the information is transfered to the related variable and it's processed in the 
                 {{ render_field(form.genre) }}
               </dl>
               <p><input type=submit value="Add Movie">
-
-
 
 
 .. toctree::

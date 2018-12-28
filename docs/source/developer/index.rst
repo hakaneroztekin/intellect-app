@@ -282,7 +282,7 @@ After the initialization of "login", it is used to load users. This is related w
 dbinit.py is used for database initialization. It runs INIT_STATEMENTS which has
 the purpose to create the tables, USERS, MOVIE, MUSIC.
 
-.. code-block:: python
+.. code-block:: SQL
 
     INIT_STATEMENTS = [
         "DROP TABLE IF EXISTS USERS CASCADE", # to test changes quickly
@@ -326,7 +326,7 @@ the purpose to create the tables, USERS, MOVIE, MUSIC.
 Notice that USER_ID and MUSIC_ID/MOVIE_ID are the primary keys for these tables.
 Also, they got cascading.
 
-.. code-block:: python
+.. code-block:: SQL
 
         "CREATE TABLE IF NOT EXISTS MUSIC_LIST("
         "USER_ID INTEGER REFERENCES USERS(id) ON DELETE CASCADE,"
@@ -712,7 +712,7 @@ labeled as block, as in the second menu bar. Second menu bar includes links to t
 It also has a welcome message with included username. Because it's only necessary for mylists page
 it is labeled as secondmenubar.
 
-.. code-block:: python
+.. code-block:: html
 
     <div class="w3-bar w3-text-yellow w3-large">
         <h5>
@@ -736,7 +736,7 @@ it is labeled as secondmenubar.
 
 Then create a block for body. It's empty for the homepage.
 
-.. code-block:: python
+.. code-block:: html
 
     <body>
         {% block content %}{%  endblock %}
@@ -744,7 +744,7 @@ Then create a block for body. It's empty for the homepage.
 
 Create the footer;
 
-.. code-block:: python
+.. code-block:: html
 
     {   % block footer %}
     <footer class="w3-bottom w3-container w3-text-gray">
@@ -754,7 +754,7 @@ Create the footer;
 
 Block for additional styles;
 
-.. code-block:: python
+.. code-block:: html
 
     {% block additional_styles %}
     <style>
@@ -778,7 +778,7 @@ Almost all the pages are created to work with forms. The forms has fields accord
 **User Authentication** *signup.html*
 The technical part of the page can be seen below:
 
-.. code-block:: python
+.. code-block:: html
 
     {% block content %}
             <h1>Sign-up to Intellect</h1>
@@ -802,7 +802,7 @@ Each form element is rendered in the html.
 **User Authentication** *signin.html*
 In sign-in,  username and password is asked. Also, there is an option to "Remember" the user later on.
 
-.. code-block:: python
+.. code-block:: html
 
     {% block title %} Sign-in for Intellect {% endblock %}
     {% block content %}
@@ -829,7 +829,7 @@ In sign-in,  username and password is asked. Also, there is an option to "Rememb
 **Homepage** *homepage.html*
 Homepage has a difference in the additional styles here. A specific background image is implemented.
 
-.. code-block:: python
+.. code-block:: css
 
     {% block additional_styles %}
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -857,7 +857,7 @@ discussed.
 MyLists is the page shows user's own lists. It creates table and fills it with user_movies list.
 user_movies is provided to html in server.py.
 
-.. code-block:: python
+.. code-block:: html
 
      {% if user_movies %}
           <table class="w3-table-all">
@@ -906,7 +906,7 @@ Adding, updating and deleting movies and music operations are pretty similar.
 They process the form fields as text boxes, and with the click of the button,
 the information is transfered to the related variable and it's processed in the database.
 
-.. code-block:: python
+.. code-block:: html
 
          <form method=post>
               <dl>
